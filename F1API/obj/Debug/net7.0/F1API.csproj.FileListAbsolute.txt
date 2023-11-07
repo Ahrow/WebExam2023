@@ -67,3 +67,4 @@ C:\Kristiania\WebExam2023\F1API\obj\Debug\net7.0\refint\F1API.dll
 C:\Kristiania\WebExam2023\F1API\obj\Debug\net7.0\F1API.pdb
 C:\Kristiania\WebExam2023\F1API\obj\Debug\net7.0\F1API.genruntimeconfig.cache
 C:\Kristiania\WebExam2023\F1API\obj\Debug\net7.0\ref\F1API.dll
+C:\Kristiania\WebExam2023\F1API\bin\Debug\net7.0\F1API.staticwebassets.runtime.json

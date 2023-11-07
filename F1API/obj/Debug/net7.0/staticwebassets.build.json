@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "Z+h0/WA4M4z70dWO0bFPxk3Msj9YxucfFogec/5TOOA=",
+  "Hash": "jhcnLnUNMWtaR0bnsOWpwnJ2ieknnvgR8WFrbLsl5g8=",
   "Source": "F1API",
   "BasePath": "_content/F1API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "F1API\\wwwroot",
+      "Source": "F1API",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\css\\main.css",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "css/main.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\index.html",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }
