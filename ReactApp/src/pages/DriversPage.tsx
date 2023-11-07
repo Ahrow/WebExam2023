@@ -1,4 +1,4 @@
-import { DriverList } from "../components/DriverList";
+import { DriverList } from "../components/driver-list";
 
 export const DriversPage = () => {
   return (
