@@ -1,5 +1,7 @@
-import { HomePage } from "./HomePage";
+import { DriversPage } from "./DriversPage";
 import { GamePage } from "./GamePage";
-import { CRUDPage } from "./CRUDPage";
+import { HomePage } from "./HomePage";
+import { RacesPage } from "./RacesPage";
+import { TeamsPage } from "./TeamsPage";
 
-export { HomePage, GamePage, CRUDPage };
+export { DriversPage, GamePage, HomePage, RacesPage, TeamsPage };
