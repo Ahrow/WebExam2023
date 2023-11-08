@@ -36,4 +36,20 @@ public class DriversController : ControllerBase
             return StatusCode(500); 
         }
     }
+    [HttpPost]
+public async Task<ActionResult<Driver>> Post(Driver driver)
+{
+    try
+    {
+        context.Drivers.Add(driver);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(Get), new { id = driver.Id }, driver);
+    }
+    catch
+    {
+        return StatusCode(500);
+    }
 }
+}
+
+
