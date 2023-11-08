@@ -16,7 +16,7 @@ export const RacesList = () => {
 
   interface Races {
     id: number;
-    grandprix: string;
+    grandPrix: string;
     numberOfLaps: number;
     winnerName: string;
     winnerTime: string;
@@ -26,10 +26,11 @@ export const RacesList = () => {
     <div>
       {races.map((races) => (
         <RaceCard
-          grandprix={races.grandprix}
+          grandprix={races.grandPrix}
           numberOfLaps={races.numberOfLaps}
           winnerName={races.winnerName}
           winnerTime={races.winnerTime}
+          key={races.id}
         />
       ))}
     </div>

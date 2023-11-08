@@ -28,6 +28,7 @@ export const TeamList = () => {
           manufacturer={teams.manufacturer}
           driver1={teams.driver1}
           driver2={teams.driver2}
+          key={teams.id}
         />
       ))}
     </div>

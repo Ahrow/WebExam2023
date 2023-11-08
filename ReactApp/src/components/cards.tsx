@@ -26,16 +26,23 @@ export const DriverCard = ({
   nationality,
 }: DriverCardProps) => {
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
+      <h1 className="text-xl font-semibold">{title}</h1>
       <img
-        height={200}
-        width={200}
+        className="rounded-2xl"
+        height={250}
+        width={250}
         src={`src/assets/${imgUrl}`}
         alt={`Image of ${title}`}
       />
-      <p>{age}</p>
-      <p>{nationality}</p>
+      <div>
+        <p>
+          <span className="font-semibold">Age:</span> {age}
+        </p>
+        <p>
+          <span className="font-semibold">Country:</span> {nationality}
+        </p>
+      </div>
     </div>
   );
 };
@@ -47,21 +54,21 @@ export const RaceCard = ({
   winnerTime,
 }: RaceCardProps) => {
   return (
-    <div>
-      <h1>{grandprix}</h1>
-      <p>{numberOfLaps}</p>
-      <p>{winnerName}</p>
-      <p>{winnerTime}</p>
+    <div className="flex gap-20">
+      <h1>Grandprix: {grandprix}</h1>
+      <p> Nr of laps: {numberOfLaps}</p>
+      <p> Winner name: {winnerName}</p>
+      <p> Winner time: {winnerTime}</p>
     </div>
   );
 };
 
 export const TeamCard = ({ manufacturer, driver1, driver2 }: TeamCardProps) => {
   return (
-    <div>
-      <h1>{manufacturer}</h1>
-      <p>{driver1}</p>
-      <p>{driver2}</p>
+    <div className="flex gap-20 text-xl">
+      <h1>Manufacturer: {manufacturer}</h1>
+      <p>Driver 1: {driver1}</p>
+      <p>Driver 2: {driver2}</p>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import DriverService from "../services/DriverService";
 import { useState, useEffect } from "react";
 import { DriverCard } from "./cards";
+import { CardContainer } from "./card-container";
 
 export const DriverList = () => {
   const [drivers, setDrivers] = useState<Driver[]>([]);
@@ -23,15 +24,16 @@ export const DriverList = () => {
   }
 
   return (
-    <div>
+    <CardContainer>
       {drivers.map((driver) => (
         <DriverCard
           title={driver.name}
           nationality={driver.nationality}
           imgUrl={driver.imgUrl}
           age={driver.age}
+          key={driver.id}
         />
       ))}
-    </div>
+    </CardContainer>
   );
 };
