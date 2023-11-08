@@ -37,6 +37,28 @@ public class DriversController : ControllerBase
             return StatusCode(500); 
         }
     }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Driver>> Get(int id)
+    {
+        try
+        {
+            Driver? driver = await context.Drivers.FindAsync(id);
+            if (driver != null)
+            {
+                return Ok(driver);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
+    }
+
     [HttpPost]
 public async Task<ActionResult<Driver>> Post(Driver driver)
 {
@@ -65,7 +87,18 @@ public async Task<IActionResult> Delete(int id)
     } catch {
         return StatusCode(500);
     }
-}}
+}
+
+[HttpPut]
+public async Task<IActionResult> Put(Driver editedDriver) {
+    context.Entry(editedDriver).State = EntityState.Modified;
+    await context.SaveChangesAsync();
+    return NoContent();
+}
+
+
+
+}
 
 
 

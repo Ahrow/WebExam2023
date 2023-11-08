@@ -36,4 +36,61 @@ public class RacesController : ControllerBase
             return StatusCode(500); 
         }
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Race>> Get(int id)
+    {
+        try
+        {
+            Race? race = await context.Races.FindAsync(id);
+            if (race != null)
+            {
+                return Ok(race);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
+    }
+
+    [HttpPost]
+public async Task<ActionResult<Race>> Post(Race race)
+{
+    try
+    {
+        context.Races.Add(race);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(Get), new { id = race.Id }, race);
+    }
+    catch
+    {
+        return StatusCode(500);
+    }
+    
+}
+[HttpDelete("{id}")]
+public async Task<IActionResult> Delete(int id)
+{
+    try {
+        Race? race = await context.Races.FindAsync(id);
+        if (race != null) {
+            context.Races.Remove(race);
+            await context.SaveChangesAsync();
+        }
+        return NoContent();
+    } catch {
+        return StatusCode(500);
+    }
+}
+
+[HttpPut]
+public async Task<IActionResult> Put(Driver editedRace) {
+    context.Entry(editedRace).State = EntityState.Modified;
+    await context.SaveChangesAsync();
+    return NoContent();
+}
 }
