@@ -18,7 +18,7 @@ const DriverService = (() => {
     return result.data;
   };
 
-  const updateDriver = async (updatedDriver) => {
+  const updateDriver = async (updatedDriver: string) => {
     const result = await axios.put(driverController, updatedDriver);
     return result.data;
   };

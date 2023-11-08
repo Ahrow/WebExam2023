@@ -3,6 +3,9 @@ import axios from "axios";
 
 export function DriverForm() {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
+  const [deleteInput, setDeleteInput] = useState("");
+
+  const driverEndpoint = "http://localhost:5292/api/Drivers";
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -10,10 +13,13 @@ export function DriverForm() {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    const driverEndpoint = "http://localhost:5292/api/Drivers";
+  const handleDeleteChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setDeleteInput(value);
+  };
+
+  const handleAddSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    //localStorage.setItem("driverData", JSON.stringify(inputs));
     console.log("data sent", inputs);
 
     try {
@@ -24,52 +30,96 @@ export function DriverForm() {
     }
   };
 
+  const handleDeleteSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const driverIdToDelete = parseInt(deleteInput);
+      console.log("id to delete:", driverIdToDelete);
+      if (!Number.isNaN(driverIdToDelete)) {
+        const deleteResponse = await axios.delete(
+          `http://localhost:5292/api/Drivers/${driverIdToDelete}`
+        );
+        if (deleteResponse.status === 200) {
+          console.log("Driver deleted successfully:", deleteResponse.data);
+        }
+      }
+    } catch (error) {
+      console.log("Error deleting driver:", error);
+    }
+  };
+
   return (
-    <form
-      className="bg-slate-200 mt-4 h-10 gap-4 flex justify-center items-center"
-      onSubmit={handleSubmit}
-    >
-      <label>
-        Enter driver name:
+    <div>
+      <form
+        className="bg-slate-200 mt-4 h-10 gap-4 flex justify-center items-center"
+        onSubmit={handleAddSubmit}
+      >
+        <label>
+          Enter driver name:
+          <input
+            className="bg-slate-300 rounded"
+            type="text"
+            name="name"
+            value={inputs.name || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Enter driver age:
+          <input
+            className="bg-slate-300 rounded"
+            type="number"
+            name="age"
+            value={inputs.age || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Enter driver nationality:
+          <input
+            className="bg-slate-300 rounded"
+            type="text"
+            name="nationality"
+            value={inputs.nationality || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Enter img url:
+          <input
+            className="bg-slate-300 rounded"
+            type=""
+            name="imgUrl"
+            value={inputs.imgUrl || ""}
+            onChange={handleChange}
+          />
+        </label>
         <input
-          className="bg-slate-300 rounded"
-          type="text"
-          name="name"
-          value={inputs.name || ""}
-          onChange={handleChange}
+          className="h-10 w-20 rounded-md bg-green-400"
+          type="submit"
+          value="Add Driver"
         />
-      </label>
-      <label>
-        Enter driver age:
+      </form>
+      <form
+        className="bg-slate-200 mt-4 h-10 gap-4 flex justify-center items-center"
+        onSubmit={handleDeleteSubmit}
+      >
+        <label>
+          Delete driver by ID:
+          <input
+            className="bg-slate-300 rounded"
+            type="number"
+            name="deleteDriver"
+            value={deleteInput}
+            onChange={handleDeleteChange}
+          />
+        </label>
         <input
-          className="bg-slate-300 rounded"
-          type="number"
-          name="age"
-          value={inputs.age || ""}
-          onChange={handleChange}
+          className="h-10 w-20 rounded-md bg-red-400"
+          type="submit"
+          value="Delete Driver"
         />
-      </label>
-      <label>
-        Enter driver nationality:
-        <input
-          className="bg-slate-300 rounded"
-          type="text"
-          name="nationality"
-          value={inputs.nationality || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter img url:
-        <input
-          className="bg-slate-300 rounded"
-          type=""
-          name="imgUrl"
-          value={inputs.imgUrl || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <input className="h-10 w-20 rounded-md bg-red-400" type="submit" />
-    </form>
+      </form>
+    </div>
   );
 }

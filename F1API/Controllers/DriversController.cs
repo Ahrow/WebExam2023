@@ -3,6 +3,7 @@ namespace F1API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using F1API.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -49,7 +50,23 @@ public async Task<ActionResult<Driver>> Post(Driver driver)
     {
         return StatusCode(500);
     }
+    
 }
-}
+[HttpDelete("{id}")]
+public async Task<IActionResult> Delete(int id)
+{
+    try {
+        Driver? driver = await context.Drivers.FindAsync(id);
+        if (driver != null) {
+            context.Drivers.Remove(driver);
+            await context.SaveChangesAsync();
+        }
+        return NoContent();
+    } catch {
+        return StatusCode(500);
+    }
+}}
 
 
+
+  
