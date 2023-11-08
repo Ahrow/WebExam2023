@@ -18,16 +18,16 @@ const DriverService = (() => {
     return result.data;
   };
 
-  //   const updateDriver = async (updatedDriver) => {
-  //     const result = await axios.put(driverController, updatedDriver);
-  //     return result.data;
-  //   };
+  const updateDriver = async (updatedDriver) => {
+    const result = await axios.put(driverController, updatedDriver);
+    return result.data;
+  };
 
   return {
     getAllDrivers,
     getById,
     deleteById,
-    //updateDriver,
+    updateDriver,
   };
 })();
 

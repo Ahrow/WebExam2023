@@ -1,4 +1,4 @@
-interface DriverCardProps {
+export interface DriverCardProps {
   title?: string;
   imgUrl?: string;
   age?: number;

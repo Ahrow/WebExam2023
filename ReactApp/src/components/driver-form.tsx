@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import axios from "axios";
 
 export function DriverForm() {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
@@ -9,9 +10,18 @@ export function DriverForm() {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const driverEndpoint = "http://localhost:5292/api/Drivers";
     event.preventDefault();
-    localStorage.setItem("driverData", JSON.stringify(inputs));
+    //localStorage.setItem("driverData", JSON.stringify(inputs));
+    console.log("data sent", inputs);
+
+    try {
+      const response = await axios.post(driverEndpoint, inputs);
+      console.log(response.data);
+    } catch {
+      console.log("Something went wrong");
+    }
   };
 
   return (
@@ -33,7 +43,7 @@ export function DriverForm() {
         Enter driver age:
         <input
           className="bg-slate-300 rounded"
-          type="text"
+          type="number"
           name="age"
           value={inputs.age || ""}
           onChange={handleChange}
@@ -46,6 +56,16 @@ export function DriverForm() {
           type="text"
           name="nationality"
           value={inputs.nationality || ""}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Enter img url:
+        <input
+          className="bg-slate-300 rounded"
+          type=""
+          name="imgUrl"
+          value={inputs.imgUrl || ""}
           onChange={handleChange}
         />
       </label>
