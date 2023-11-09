@@ -1,7 +1,11 @@
+import { HeroContainer } from "../components/HeroContainer";
+import { Navbar } from "../components/Navbar";
+
 export const HomePage = () => {
   return (
-    <div>
-      <h1>HOME PAGE</h1>
+    <div className="bg-black">
+      <Navbar />
+      <HeroContainer />
     </div>
   );
 };
