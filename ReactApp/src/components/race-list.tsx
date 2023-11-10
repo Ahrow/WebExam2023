@@ -1,4 +1,4 @@
-import { RaceCard } from "./cards";
+import { RaceCard } from "./ui/cards";
 import RaceService from "../services/RaceService";
 import { useState, useEffect } from "react";
 

@@ -1,10 +1,8 @@
-import { HeroContainer } from "../components/HeroContainer";
-import { Navbar } from "../components/Navbar";
+import { HeroContainer } from "../components/ui/HeroContainer";
 
 export const HomePage = () => {
   return (
     <div className="bg-black">
-      <Navbar />
       <HeroContainer />
     </div>
   );

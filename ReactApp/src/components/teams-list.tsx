@@ -1,4 +1,4 @@
-import { TeamCard } from "./cards";
+import { TeamCard } from "./ui/cards";
 import TeamService from "../services/TeamService";
 import { useState, useEffect } from "react";
 

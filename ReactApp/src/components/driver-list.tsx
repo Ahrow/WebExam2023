@@ -1,7 +1,7 @@
 import DriverService from "../services/DriverService";
 import { useState, useEffect } from "react";
-import { DriverCard } from "./cards";
-import { CardContainer } from "./card-container";
+import { DriverCard } from "./ui/cards";
+import { CardContainer } from "./ui/card-container";
 
 export const DriverList = () => {
   const [drivers, setDrivers] = useState<Driver[]>([]);

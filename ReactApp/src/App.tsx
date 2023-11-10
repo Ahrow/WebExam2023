@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage, GamePage, DriversPage, TeamsPage, RacesPage } from "./pages";
-import { Header } from "./components/header";
+import { Header } from "./components/ui/header";
 
 function App() {
   return (
