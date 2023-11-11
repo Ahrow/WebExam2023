@@ -52,15 +52,15 @@ export const AddDriverForm = () => {
   };
 
   return (
-    <section>
+    <section className="text-white">
       <form
-        className="bg-slate-200 mt-4 h-10 gap-4 flex justify-center items-center"
+        className="bg-slate-900 mt-4 h-14 gap-4 flex justify-center items-center"
         onSubmit={handleSubmit}
       >
         <label>
           Enter driver name:
           <input
-            className="bg-slate-300 rounded"
+            className="bg-slate-500 rounded"
             type="text"
             name="name"
             value={inputs?.name}
@@ -70,7 +70,7 @@ export const AddDriverForm = () => {
         <label>
           Enter driver age:
           <input
-            className="bg-slate-300 rounded"
+            className="bg-slate-500 rounded"
             type="number"
             name="age"
             value={inputs?.age}
@@ -80,7 +80,7 @@ export const AddDriverForm = () => {
         <label>
           Enter driver nationality:
           <input
-            className="bg-slate-300 rounded"
+            className="bg-slate-500 rounded"
             type="text"
             name="nationality"
             value={inputs?.nationality}
@@ -90,7 +90,7 @@ export const AddDriverForm = () => {
         <label>
           Upload Image:
           <input
-            className="bg-slate-300 rounded"
+            className="bg-slate-500 rounded"
             type="file"
             name="image"
             onChange={handleImageChange}

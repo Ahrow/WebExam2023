@@ -42,7 +42,7 @@ export const DeleteDriverForm = () => {
       <label>
         Enter driver id to delete:
         <input
-          className="bg-slate-300 rounded"
+          className="bg-slate-500 rounded"
           type="number"
           name="id"
           value={deleteInput}

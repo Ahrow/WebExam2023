@@ -1,17 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, GamePage, DriversPage, TeamsPage, RacesPage } from "./pages";
+import { HomePage, GamePage, DriversPage } from "./pages";
 import { Header } from "./components/ui/header";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="bg-black">
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/drivers" element={<DriversPage />} />
-          <Route path="/teams" element={<TeamsPage />} />
-          <Route path="/races" element={<RacesPage />} />
           <Route path="/game" element={<GamePage />} />
         </Routes>
       </div>

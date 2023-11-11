@@ -1,27 +1,31 @@
-# React + TypeScript + Vite
+## FORMULA 1 EXAM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## TODO:
 
-Currently, two official plugins are available:
+Main functionality:
+[x] Get all of something
+[x] Get something by ID
+[] Get something by name -> Implement search
+[x] Delete something
+[x] Create something (Including image upload)
+[] Update something
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Extra functionality:
+F1 Race Car game
+[] Setup backend/database for Car
 
-## Expanding the ESLint configuration
+- Stats: Speed/Acceleration/Handling
+- CarName, CarImage
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[] Driver & Car selector
 
-- Configure the top-level `parserOptions` property like this:
+- Choose card/driver from API (render card ?)
+- Retrieve stats from API
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+[] Race simulation
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Simulate race based on:
+  - CarStats
+  - RandomNess -> Variation modifier
+  - Simulation Loop
+  -
