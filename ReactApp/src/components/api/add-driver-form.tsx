@@ -1,0 +1,107 @@
+import { ChangeEvent, FormEvent } from "react";
+import { useState } from "react";
+import axios from "axios";
+
+export const AddDriverForm = () => {
+  const [inputs, setInputs] = useState<{ [key: string]: string }>({});
+  const [image, setImage] = useState<File | null>(null);
+
+  const driverEndpoint = "http://localhost:5292/api/Drivers";
+  const imageUploadEndpoint = "http://localhost:5292/api/ImageUpload";
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const imageTarget = event.target.files?.[0];
+    if (imageTarget) {
+      setImage(imageTarget);
+      const fileName = imageTarget.name;
+      setInputs((values) => ({ ...values, imgUrl: fileName }));
+      console.log("Image file name" + fileName);
+    }
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("data sent", inputs);
+
+    try {
+      const response = await axios.post(driverEndpoint, inputs);
+      console.log("response", response);
+      const formData = new FormData();
+      if (image) {
+        formData.append("formFile", image);
+      }
+
+      const uploadResult = await axios({
+        url: imageUploadEndpoint,
+        method: "POST",
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      formData.delete("formFile");
+      console.log("upload result", uploadResult);
+    } catch (error) {
+      console.log("Something went wrong", error);
+    }
+  };
+
+  return (
+    <section>
+      <form
+        className="bg-slate-200 mt-4 h-10 gap-4 flex justify-center items-center"
+        onSubmit={handleSubmit}
+      >
+        <label>
+          Enter driver name:
+          <input
+            className="bg-slate-300 rounded"
+            type="text"
+            name="name"
+            value={inputs?.name}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Enter driver age:
+          <input
+            className="bg-slate-300 rounded"
+            type="number"
+            name="age"
+            value={inputs?.age}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Enter driver nationality:
+          <input
+            className="bg-slate-300 rounded"
+            type="text"
+            name="nationality"
+            value={inputs?.nationality}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Upload Image:
+          <input
+            className="bg-slate-300 rounded"
+            type="file"
+            name="image"
+            onChange={handleImageChange}
+          />
+        </label>
+        <input
+          className="h-10 w-20 rounded-md bg-green-400"
+          type="submit"
+          value="Add Driver"
+        />
+      </form>
+    </section>
+  );
+};
