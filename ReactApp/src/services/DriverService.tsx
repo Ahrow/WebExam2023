@@ -14,7 +14,7 @@ const DriverService = (() => {
   };
 
   const getByName = async (name: string) => {
-    const result = await axios.get(`${driverController}/name/${name}`);
+    const result = await axios.get(`${driverController}/${name}`);
     return result.data;
   };
 

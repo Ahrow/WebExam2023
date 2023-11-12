@@ -6,8 +6,8 @@ export const AddDriverForm = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [image, setImage] = useState<File | null>(null);
 
-  const driverEndpoint = "http://localhost:5173/api/Drivers";
-  const imageUploadEndpoint = "http://localhost:5173/api/ImageUpload";
+  const driverEndpoint = "http://localhost:5292/api/Drivers";
+  const imageUploadEndpoint = "http://localhost:5292/api/ImageUpload";
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;

@@ -60,6 +60,7 @@ public class DriversController : ControllerBase
     }
 
 //    [HttpGet("{name}")]
+//    [Route("[action]")] 
 //     public async Task<ActionResult<Driver>> Get(string name)
 //     {
 //         try
