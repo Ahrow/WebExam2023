@@ -3,7 +3,6 @@ namespace F1API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using F1API.Contexts;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -39,6 +38,7 @@ public class DriversController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    
     public async Task<ActionResult<Driver>> Get(int id)
     {
         try
@@ -58,6 +58,27 @@ public class DriversController : ControllerBase
             return StatusCode(500);
         }
     }
+
+//    [HttpGet("{name}")]
+//     public async Task<ActionResult<Driver>> Get(string name)
+//     {
+//         try
+//         {
+//             Driver? driver = await context.Drivers.FirstOrDefaultAsync(d => d.Name == name);
+//             if (driver != null)
+//             {
+//                 return Ok(driver);
+//             }
+//             else
+//             {
+//                 return NotFound();
+//             }
+//         }
+//         catch
+//         {
+//             return StatusCode(500);
+//         }
+//     }
 
     [HttpPost]
 public async Task<ActionResult<Driver>> Post(Driver driver)

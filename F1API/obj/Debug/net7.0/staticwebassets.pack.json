@@ -5,6 +5,82 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-alexander-albon.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-alexander-albon.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-alonso.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-alonso.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-bottas.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-bottas.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-gasly.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-gasly.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-hamilton.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-hamilton.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-leclerc.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-leclerc.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-norris.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-norris.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-ocon.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-ocon.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-perez.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-perez.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-piastri.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-piastri.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-russel.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-russel.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-sainz.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-sainz.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-stroll.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-stroll.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-tsunoda.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-tsunoda.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-verstappen.jpg",
+      "PackagePath": "staticwebassets\\images\\driver-verstappen.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\f1-amd-1.jpg",
+      "PackagePath": "staticwebassets\\images\\f1-amd-1.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\f1-amd-2.jpg",
+      "PackagePath": "staticwebassets\\images\\f1-amd-2.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\f1-amd-3.png",
+      "PackagePath": "staticwebassets\\images\\f1-amd-3.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
+      "PackagePath": "staticwebassets\\images\\knight.png"
+    },
+    {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
