@@ -4,13 +4,15 @@
 
 Main functionality:
 [x] Get all of something
-[x] Get something by ID
+[] Get something by ID
 [] Get something by name -> Implement search
 [x] Delete something
 [x] Create something (Including image upload)
 [] Update something
 
 Extra functionality:
+Quiz Game:
+
 F1 Race Car game
 [] Setup backend/database for Car
 
@@ -28,4 +30,4 @@ F1 Race Car game
   - CarStats
   - RandomNess -> Variation modifier
   - Simulation Loop
-  -
+  - Use input ?

@@ -1,4 +1,4 @@
-import { HeroContainer } from "../components/ui/HeroContainer";
+import { HeroContainer } from "../components/ui/hero-container";
 
 export const HomePage = () => {
   return (

@@ -6,8 +6,8 @@ export const AddDriverForm = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [image, setImage] = useState<File | null>(null);
 
-  const driverEndpoint = "http://localhost:5292/api/Drivers";
-  const imageUploadEndpoint = "http://localhost:5292/api/ImageUpload";
+  const driverEndpoint = "http://localhost:5173/api/Drivers";
+  const imageUploadEndpoint = "http://localhost:5173/api/ImageUpload";
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -52,52 +52,56 @@ export const AddDriverForm = () => {
   };
 
   return (
-    <section className="text-white">
+    <section>
+      <h3>Enter driver details:</h3>
       <form
-        className="bg-slate-900 mt-4 h-14 gap-4 flex justify-center items-center"
+        className="bg-slate-900 gap-2 flex flex-wrap items-center"
         onSubmit={handleSubmit}
       >
-        <label>
-          Enter driver name:
+        <label className="mb-2 ">
+          Name:
           <input
-            className="bg-slate-500 rounded"
+            className="bg-slate-500 rounded p-1"
             type="text"
             name="name"
             value={inputs?.name}
             onChange={handleChange}
+            placeholder="name"
           />
         </label>
-        <label>
-          Enter driver age:
+        <label className="mb-2">
+          Age:
           <input
-            className="bg-slate-500 rounded"
+            className="bg-slate-500 rounded p-1"
             type="number"
             name="age"
             value={inputs?.age}
             onChange={handleChange}
+            placeholder="age"
           />
         </label>
-        <label>
-          Enter driver nationality:
+        <label className="mb-2">
+          Nationality:
           <input
-            className="bg-slate-500 rounded"
+            className="bg-slate-500 rounded p-1"
             type="text"
             name="nationality"
             value={inputs?.nationality}
             onChange={handleChange}
+            placeholder="nationality"
           />
         </label>
-        <label>
-          Upload Image:
+        <label className="mb-2">
+          Image:
           <input
-            className="bg-slate-500 rounded"
+            className="bg-slate-500 rounded p-1"
             type="file"
             name="image"
             onChange={handleImageChange}
           />
         </label>
         <input
-          className="h-10 w-20 rounded-md bg-green-400"
+          className="rounded-md bg-green-400 mb-2 p-2"
           type="submit"
           value="Add Driver"
         />

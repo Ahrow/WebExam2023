@@ -38,22 +38,28 @@ export const DeleteDriverForm = () => {
   };
 
   return (
-    <form onSubmit={handleDeleteSubmit}>
-      <label>
-        Enter driver id to delete:
+    <section className="text-white">
+      <h3>Delete Driver:</h3>
+      <form
+        onSubmit={handleDeleteSubmit}
+        className="text-white bg-slate-900 gap-2 p-2 flex flex-wrap items-center"
+      >
+        <label>
+          ID:
+          <input
+            className="bg-slate-500 rounded"
+            type="number"
+            name="id"
+            value={deleteInput}
+            onChange={handleDeleteChange}
+          />
+        </label>
         <input
-          className="bg-slate-500 rounded"
-          type="number"
-          name="id"
-          value={deleteInput}
-          onChange={handleDeleteChange}
+          className="p-2 rounded-md bg-red-400"
+          type="submit"
+          value="Delete Driver"
         />
-      </label>
-      <input
-        className="h-10 w-20 rounded-md bg-red-400"
-        type="submit"
-        value="Delete Driver"
-      />
-    </form>
+      </form>
+    </section>
   );
 };

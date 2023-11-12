@@ -13,6 +13,11 @@ const DriverService = (() => {
     return result.data;
   };
 
+  // const getByName = async (name: string) => {
+  //   const result = await axios.get(`${driverController}/name/${name}`);
+  //   return result.data;
+  // };
+
   const deleteById = async (id: number) => {
     const result = await axios.delete(`${driverController}/${id}`);
     return result.data;
