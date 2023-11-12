@@ -1,13 +1,10 @@
 import { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
-import axios from "axios";
+import DriverService from "../../services/DriverService";
 
 export const AddDriverForm = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [image, setImage] = useState<File | null>(null);
-
-  const driverEndpoint = "http://localhost:5292/api/Drivers";
-  const imageUploadEndpoint = "http://localhost:5292/api/ImageUpload";
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -27,27 +24,10 @@ export const AddDriverForm = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("data sent", inputs);
-
     try {
-      const response = await axios.post(driverEndpoint, inputs);
-      console.log("response", response);
-      const formData = new FormData();
-      if (image) {
-        formData.append("formFile", image);
-      }
-
-      const uploadResult = await axios({
-        url: imageUploadEndpoint,
-        method: "POST",
-        data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-
-      formData.delete("formFile");
-      console.log("upload result", uploadResult);
+      await DriverService.addDriver(inputs, image);
     } catch (error) {
-      console.log("Something went wrong", error);
+      console.log("Error in handleSubmit", error);
     }
   };
 

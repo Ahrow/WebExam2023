@@ -38,7 +38,6 @@ public class DriversController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    
     public async Task<ActionResult<Driver>> Get(int id)
     {
         try
@@ -59,27 +58,27 @@ public class DriversController : ControllerBase
         }
     }
 
-//    [HttpGet("{name}")]
-//    [Route("[action]")] 
-//     public async Task<ActionResult<Driver>> Get(string name)
-//     {
-//         try
-//         {
-//             Driver? driver = await context.Drivers.FirstOrDefaultAsync(d => d.Name == name);
-//             if (driver != null)
-//             {
-//                 return Ok(driver);
-//             }
-//             else
-//             {
-//                 return NotFound();
-//             }
-//         }
-//         catch
-//         {
-//             return StatusCode(500);
-//         }
-//     }
+    [HttpGet]
+    [Route("[action]")]
+    public async Task<ActionResult<List<Driver>>> Get(string name)
+    {
+        try
+        {
+            List<Driver> drivers = await context.Drivers.Where(d => d.Name.Contains(name)).ToListAsync();
+            if (drivers != null)
+            {
+                return Ok(drivers);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
+    }
 
     [HttpPost]
 public async Task<ActionResult<Driver>> Post(Driver driver)
@@ -117,8 +116,6 @@ public async Task<IActionResult> Put(Driver editedDriver) {
     await context.SaveChangesAsync();
     return NoContent();
 }
-
-
 
 }
 

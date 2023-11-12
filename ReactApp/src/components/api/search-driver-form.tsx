@@ -4,12 +4,14 @@ import DriverService from "../../services/DriverService";
 const SearchDriverForm: React.FC = () => {
   const [searchType, setSearchType] = useState<"id" | "name">("id");
   const [searchValue, setSearchValue] = useState<string | number>("");
-  const [driver, setDriver] = useState<any>(null);
+  const [driver, setDriver] = useState<any>(null); // FIX TYPE ERROR
   const [error, setError] = useState<string | null>(null);
 
   const handleSearch = async () => {
     if (searchValue) {
       try {
+        console.log("Search Value:", searchValue);
+
         let fetchedDriver;
 
         if (searchType === "id") {
@@ -51,7 +53,7 @@ const SearchDriverForm: React.FC = () => {
             value={searchValue}
             onChange={(e) =>
               setSearchValue(
-                searchType === "id" ? e.target.value : e.target.value.trim()
+                searchType === "id" ? e.target.value : e.target.value
               )
             }
           />

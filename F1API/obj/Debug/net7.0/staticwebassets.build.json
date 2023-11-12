@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZB0FrKTnisf7bY0F9jrGfj8QkXy8kPhaN4EnWIuIZlQ=",
+  "Hash": "p9nNWz60Ap9SYspJrExsPgXIE1CXuO1tIsmKJ+Bd32Q=",
   "Source": "F1API",
   "BasePath": "_content/F1API",
   "Mode": "Default",
@@ -340,6 +340,23 @@
       "OriginalItemSpec": "wwwroot\\images\\f1-amd-3.png"
     },
     {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\image 1.png",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/image 1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\image 1.png"
+    },
+    {
       "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
       "SourceId": "F1API",
       "SourceType": "Discovered",
@@ -355,6 +372,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\knight.png"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\luftwaffels.webp",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/luftwaffels.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\luftwaffels.webp"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\norway.png",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/norway.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\norway.png"
     },
     {
       "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\index.html",

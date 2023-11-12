@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
-import axios from "axios";
+import DriverService from "../../services/DriverService";
 
 export const DeleteDriverForm = () => {
   const [deleteInput, setDeleteInput] = useState("");
@@ -12,28 +12,16 @@ export const DeleteDriverForm = () => {
 
   const handleDeleteSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     try {
       const driverIdToDelete = parseInt(deleteInput);
       console.log("id to delete:", driverIdToDelete);
 
       if (driverIdToDelete) {
-        const deleteResponse = await axios.delete(
-          `http://localhost:5292/api/Drivers/${driverIdToDelete}`
-        );
-
-        console.log("Delete Response:", deleteResponse);
-
-        if (deleteResponse.status === 204) {
-          console.log("Driver deleted successfully");
-        } else {
-          console.log(
-            "Error deleting driver. Status code:",
-            deleteResponse.status
-          );
-        }
+        await DriverService.deleteById(driverIdToDelete);
       }
     } catch (error) {
-      console.log("Error deleting driver:", error);
+      console.log("Error in handleDeleteSubmit", error);
     }
   };
 

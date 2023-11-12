@@ -1,8 +1,40 @@
 import axios from "axios";
 
 const DriverService = (() => {
-  const driverController = "http://localhost:5292/api/Drivers";
+  const baseURL = "http://localhost:5292/api";
+  const driverController = `${baseURL}/Drivers`;
+  const imageUploadEndpoint = `${baseURL}/ImageUpload`;
+  const testURL = "http://localhost:5292/api/Drivers/Get?name=test";
 
+  const addDriver = async (
+    inputs: { [key: string]: string },
+    image: File | null
+  ) => {
+    try {
+      const response = await axios.post(driverController, inputs);
+      console.log("response", response);
+
+      const formData = new FormData();
+      if (image) {
+        formData.append("formFile", image);
+      }
+
+      const uploadResult = await axios({
+        url: imageUploadEndpoint,
+        method: "POST",
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      formData.delete("formFile");
+      console.log("upload result", uploadResult);
+
+      return response.data;
+    } catch (error) {
+      console.log("Something went wrong", error);
+      throw error;
+    }
+  };
   const getAllDrivers = async () => {
     const result = await axios.get(driverController);
     return result.data;
@@ -14,13 +46,26 @@ const DriverService = (() => {
   };
 
   const getByName = async (name: string) => {
-    const result = await axios.get(`${driverController}/${name}`);
+    const result = await axios.get(`${driverController}/Get?name=${name}`);
     return result.data;
   };
 
   const deleteById = async (id: number) => {
-    const result = await axios.delete(`${driverController}/${id}`);
-    return result.data;
+    try {
+      const result = await axios.delete(`${driverController}/${id}`);
+      console.log("Delete Response:", result);
+
+      if (result.status === 204) {
+        console.log("Driver deleted successfully");
+      } else {
+        console.log("Error deleting driver. Status code:", result.status);
+      }
+
+      return result.data;
+    } catch (error) {
+      console.log("Error deleting driver:", error);
+      throw error;
+    }
   };
 
   const updateDriver = async (updatedDriver: string) => {
@@ -34,6 +79,7 @@ const DriverService = (() => {
     deleteById,
     updateDriver,
     getByName,
+    addDriver,
   };
 })();
 
