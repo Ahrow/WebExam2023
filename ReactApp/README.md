@@ -3,14 +3,18 @@
 ## BUG FIX:
 
 FUNCTIONALITY:
-[] CORS ERROR on 3d HttpGET -> Check [Action] or other options
-[] Search function -> ID works / FIX NAME !!! - DriverService.tsx:17
+[x] CORS ERROR on 3d HttpGET -> Check [Action] or other options
+[x] Search function -> ID works / FIX NAME !!! - DriverService.tsx:17
+[] Still needs Capital letter
 
 - GET http://localhost:5292/api/Drivers/name/Verstappen 404 (Not Found)
-- This is path is wrong, should be drivers/verstappen -> Need check for partial string aswell!!! "verst" should return verstappen etc.
-  [] Fix Type ERROR searchDriver [driver]
-  []
-  []
+- This is path is wrong -> Need check for partial string aswell!!! "verst" should return verstappen etc.
+
+[x] Fix Type ERROR searchDriver [driver]
+[] FIX TYPE ERROR Dereference of a possibly null reference.CS8602
+string? Driver.Name { get; set; }
+'Name' may be null here.
+[]
 
 UI:
 [] FIX HEADER -> whitespace on right when window scales down
@@ -21,11 +25,13 @@ UI:
 
 Main functionality:
 [x] Get all of something
-[] Get something by ID -> Implement search
-[] Get something by name -> Implement search
+[x] Get something by ID -> Implement search
+[x] Get something by name -> Implement search
 [x] Delete something
 [x] Create something (Including image upload)
 [] Update something
+
+[] RENDER LIST dynamically based on CRUD
 
 Extra functionality:
 Quiz Game:

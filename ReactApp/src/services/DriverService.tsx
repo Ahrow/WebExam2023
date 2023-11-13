@@ -4,7 +4,6 @@ const DriverService = (() => {
   const baseURL = "http://localhost:5292/api";
   const driverController = `${baseURL}/Drivers`;
   const imageUploadEndpoint = `${baseURL}/ImageUpload`;
-  const testURL = "http://localhost:5292/api/Drivers/Get?name=test";
 
   const addDriver = async (
     inputs: { [key: string]: string },

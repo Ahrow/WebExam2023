@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import DriverService from "../services/DriverService";
 import { DriverCard } from "./ui/cards";
 import { CardContainer } from "./ui/card-container";
@@ -11,28 +11,37 @@ interface Driver {
   nationality: string;
 }
 
-const DriverItem: React.FC<{ driverId: number }> = ({ driverId }) => {
+interface DriverItemProps {
+  driverId?: number;
+  driverName?: string;
+}
+
+const DriverItem: React.FC<DriverItemProps> = ({ driverId, driverName }) => {
   const [driver, setDriver] = useState<Driver | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchDriver = async () => {
       try {
-        const fetchedDriver = await DriverService.getById(driverId);
+        let fetchedDriver: Driver | null;
+
+        if (driverId) {
+          fetchedDriver = await DriverService.getById(driverId);
+        } else if (driverName) {
+          fetchedDriver = await DriverService.getByName(driverName);
+        } else {
+          fetchedDriver = null;
+        }
 
         setDriver(fetchedDriver);
-        setError(null);
       } catch (error) {
-        setError("Error fetching driver");
         console.error("Error fetching driver:", error);
       }
     };
     fetchDriver();
-  }, [driverId]);
+  }, [driverId, driverName]);
 
   return (
     <CardContainer>
-      {error && <p>{error}</p>}
       {driver && (
         <DriverCard
           title={driver.name}

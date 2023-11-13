@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DriverService from "../../services/DriverService";
+import DriverItem from "../driver-item";
 
 const SearchDriverForm: React.FC = () => {
   const [searchType, setSearchType] = useState<"id" | "name">("id");
   const [searchValue, setSearchValue] = useState<string | number>("");
-  const [driver, setDriver] = useState<any>(null); // FIX TYPE ERROR
+  const [driver, setDriver] = useState<{ [key: string]: string }>({}); // FIX TYPE ERROR
   const [error, setError] = useState<string | null>(null);
 
   const handleSearch = async () => {

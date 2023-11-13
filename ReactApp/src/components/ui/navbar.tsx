@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className=" h-10 sm:h-20 w-full bg-black flex justify-evenly items-center text-sm sm:text-2xl sm:font-semibold ">
+    <nav className=" h-10 sm:h-20 w-full bg-black flex justify-evenly items-center text-sm sm:text-2xl font-semibold">
       <Link className="text-teal-400 hover:text-yellow-400" to="/">
         Home
       </Link>

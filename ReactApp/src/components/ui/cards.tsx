@@ -73,18 +73,30 @@ export const TeamCard = ({ manufacturer, driver1, driver2 }: TeamCardProps) => {
   );
 };
 
-export const HeroCard = () => {
+export const HeroCard = ({
+  title,
+  description,
+  imageSrc,
+}: {
+  title: React.ReactElement;
+  description: string;
+  imageSrc: string;
+}) => {
   return (
-    <div className="h-[400px] w-[800px] bg-slate-900 text-white">
-      <h1 className="text-white text-4xl text-center p-4">
-        WELCOME to the Formula 1 API{" "}
-      </h1>
-      <p className="text-2xl p-8">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quo
-        nesciunt sapiente obcaecati similique est facilis quaerat consectetur
-        eum earum provident harum sit labore voluptate aliquid nam, totam vel.
-        Animi.
-      </p>
+    <div className="sm:h-[400px] sm:w-[800px] h-[300px] w-[400px] bg-slate-900 text-white flex flex-col rounded-xl">
+      <div>
+        <h1 className="sm:text-4xl font-bold text-2xl text-center sm:p-4">
+          {title}
+        </h1>
+        <p className="sm:text-2xl text-base p-8">{description}</p>
+      </div>
+      <div>
+        <img
+          className="sm:h-[200px] sm:w-[800px] h-[150px] w-[400px] rounded-b-xl object-cover"
+          src={`src/assets/${imageSrc}`}
+          alt=""
+        />
+      </div>
     </div>
   );
 };
