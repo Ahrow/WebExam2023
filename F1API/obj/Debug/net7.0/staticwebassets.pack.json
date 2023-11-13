@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\car-mclaren.png",
+      "PackagePath": "staticwebassets\\images\\car-mclaren.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\car-mercedes.jpg",
+      "PackagePath": "staticwebassets\\images\\car-mercedes.jpg"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\car-renault.png",
+      "PackagePath": "staticwebassets\\images\\car-renault.png"
+    },
+    {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-alexander-albon.jpg",
       "PackagePath": "staticwebassets\\images\\driver-alexander-albon.jpg"
     },
@@ -75,6 +87,18 @@
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\f1-amd-3.png",
       "PackagePath": "staticwebassets\\images\\f1-amd-3.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-bahrain.png",
+      "PackagePath": "staticwebassets\\images\\track-bahrain.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-jeddah.png",
+      "PackagePath": "staticwebassets\\images\\track-jeddah.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-miami.jpg",
+      "PackagePath": "staticwebassets\\images\\track-miami.jpg"
     },
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\index.html",

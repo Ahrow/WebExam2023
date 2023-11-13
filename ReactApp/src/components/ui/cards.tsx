@@ -5,18 +5,20 @@ export interface DriverCardProps {
   nationality?: string;
 }
 
-interface RaceCardProps {
-  grandprix?: string;
-  numberOfLaps?: number;
-  winnerName?: string;
-  winnerTime?: string;
+interface TrackCardProps {
+  name?: string;
+  distance?: number;
+  turns?: number;
+  laps?: number;
+  imgUrl?: string;
 }
 
-interface TeamCardProps {
-  manufacturer?: string;
+export interface CarCardProps {
+  name?: string;
+  speed?: number;
+  acceleration?: number;
+  handling?: number;
   imgUrl?: string;
-  driver1?: string;
-  driver2?: string;
 }
 
 export const DriverCard = ({
@@ -47,28 +49,48 @@ export const DriverCard = ({
   );
 };
 
-export const RaceCard = ({
-  grandprix,
-  numberOfLaps,
-  winnerName,
-  winnerTime,
-}: RaceCardProps) => {
+export const CarCard = ({
+  name,
+  speed,
+  acceleration,
+  handling,
+  imgUrl,
+}: CarCardProps) => {
   return (
-    <div className="flex gap-20">
-      <h1>Grandprix: {grandprix}</h1>
-      <p> Nr of laps: {numberOfLaps}</p>
-      <p> Winner name: {winnerName}</p>
-      <p> Winner time: {winnerTime}</p>
+    <div className="flex bg-yellow-400">
+      <h1>{name}</h1>
+      <p>speed:{speed}</p>
+      <p>acceleration:{acceleration}</p>
+      <p>handling:{handling}</p>
+      <img
+        height={100}
+        width={100}
+        src={`http://localhost:5292/images/${imgUrl}`}
+        alt={`Image of a ${name} car.`}
+      />
     </div>
   );
 };
 
-export const TeamCard = ({ manufacturer, driver1, driver2 }: TeamCardProps) => {
+export const TrackCard = ({
+  name,
+  distance,
+  turns,
+  laps,
+  imgUrl,
+}: TrackCardProps) => {
   return (
-    <div className="flex gap-20 text-xl">
-      <h1>Manufacturer: {manufacturer}</h1>
-      <p>Driver 1: {driver1}</p>
-      <p>Driver 2: {driver2}</p>
+    <div className="flex bg-red-400">
+      <h1>{name}</h1>
+      <p>distance:{distance}</p>
+      <p>turns:{turns}</p>
+      <p>laps:{laps}</p>
+      <img
+        height={100}
+        width={100}
+        src={`http://localhost:5292/images/${imgUrl}`}
+        alt={`Image the ${name}`}
+      />
     </div>
   );
 };
@@ -94,7 +116,7 @@ export const HeroCard = ({
         <img
           className="sm:h-[200px] sm:w-[800px] h-[150px] w-[400px] rounded-b-xl object-cover"
           src={`src/assets/${imageSrc}`}
-          alt=""
+          alt="Background image of a teal and red formula 1 car."
         />
       </div>
     </div>
