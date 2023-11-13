@@ -1,10 +1,10 @@
-import DriverItem from "../components/driver-item";
+import { Game } from "../components/game/game";
 
 export const GamePage = () => {
   return (
     <div>
       <h1>GAME PAGE</h1>
-      <DriverItem driverId={1} />
+      <Game />
     </div>
   );
 };

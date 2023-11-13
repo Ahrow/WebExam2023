@@ -34,9 +34,7 @@ Main functionality:
 [] RENDER LIST dynamically based on CRUD
 
 Extra functionality:
-Quiz Game:
-
-- Basic quiz game
+RACETRACK -> Number of turns 50, Racetrack length,
 
 F1 Race Car game
 [] Setup backend/database for Car
