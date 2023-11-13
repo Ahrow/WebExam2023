@@ -19,11 +19,11 @@ export const HeroContainer = () => {
         </div>
         <div className="flex">
           <div className="h-[700px] w-[450px] bg-black "></div>
-          <div className="h-[700px] w-[450px] bg-black bg-[url('src/assets/vertical-line-red-big.svg')] bg-no-repeat bg-center"></div>
+          <div className="h-[700px] w-[450px] bg-black bg-[url('src/assets/red-extended.svg')] bg-no-repeat bg-center"></div>
           <div className="h-[700px] w-[450px] bg-black "></div>
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center">
         <HeroCard
           title={<span className="text-red-500">Game</span>}
           imageSrc="hero-top.jpg"

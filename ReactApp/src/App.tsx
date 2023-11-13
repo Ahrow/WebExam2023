@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage, GamePage, DriversPage } from "./pages";
 import { Header } from "./components/ui/header";
+import { Footer } from "./components/ui/footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/drivers" element={<DriversPage />} />
           <Route path="/game" element={<GamePage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
