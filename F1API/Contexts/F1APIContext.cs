@@ -8,6 +8,7 @@ public class F1APIContext : DbContext
     public F1APIContext(DbContextOptions<F1APIContext> options):base(options){}   
 
     public DbSet<Driver> Drivers {get; set;}
-    public DbSet<Race> Races {get; set;}
-    public DbSet<Team> Teams {get; set;}
+    public DbSet<Car> Cars {get; set;}
+    public DbSet<Track> Tracks {get; set;}
+   
 }
