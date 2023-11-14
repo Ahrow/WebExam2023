@@ -1,25 +1,8 @@
-export interface DriverCardProps {
-  title?: string;
-  imgUrl?: string;
-  age?: number;
-  nationality?: string;
-}
-
-interface TrackCardProps {
-  name?: string;
-  distance?: number;
-  turns?: number;
-  laps?: number;
-  imgUrl?: string;
-}
-
-export interface CarCardProps {
-  name?: string;
-  speed?: number;
-  acceleration?: number;
-  handling?: number;
-  imgUrl?: string;
-}
+import {
+  DriverCardProps,
+  CarCardProps,
+  TrackCardProps,
+} from "../../interfaces/card-props";
 
 export const DriverCard = ({
   title,
@@ -30,21 +13,49 @@ export const DriverCard = ({
   return (
     <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
       <h1 className="text-xl font-semibold">{title}</h1>
+      <div className="flex">
+        <img
+          className="rounded-2xl"
+          height={300}
+          width={300}
+          src={`http://localhost:5292/images/${imgUrl}`}
+          alt={`Image of ${title}`}
+        />
+      </div>
+      <div className="">
+        <div>
+          <p>
+            <span className="font-semibold">Age:</span> {age}
+          </p>
+          <p>
+            <span className="font-semibold">Country:</span> {nationality}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const DriverGameCard = ({
+  title,
+  skill,
+  aggression,
+  experience,
+  imgUrl,
+}: DriverCardProps) => {
+  return (
+    <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
+      <h1 className="text-xl font-semibold">{title}</h1>
       <img
         className="rounded-2xl"
-        height={250}
-        width={250}
         src={`http://localhost:5292/images/${imgUrl}`}
         alt={`Image of ${title}`}
+        height={300}
+        width={300}
       />
-      <div>
-        <p>
-          <span className="font-semibold">Age:</span> {age}
-        </p>
-        <p>
-          <span className="font-semibold">Country:</span> {nationality}
-        </p>
-      </div>
+      <p>Skill:{skill}</p>
+      <p>Aggression:{aggression}</p>
+      <p>Experience:{experience}</p>
     </div>
   );
 };
@@ -57,17 +68,17 @@ export const CarCard = ({
   imgUrl,
 }: CarCardProps) => {
   return (
-    <div className="flex bg-yellow-400">
-      <h1>{name}</h1>
-      <p>speed:{speed}</p>
-      <p>acceleration:{acceleration}</p>
-      <p>handling:{handling}</p>
+    <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
+      <h1 className="text-xl font-semibold">{name}</h1>
       <img
-        height={100}
-        width={100}
+        height={300}
+        width={300}
         src={`http://localhost:5292/images/${imgUrl}`}
         alt={`Image of a ${name} car.`}
       />
+      <p>speed:{speed}</p>
+      <p>acceleration:{acceleration}</p>
+      <p>handling:{handling}</p>
     </div>
   );
 };

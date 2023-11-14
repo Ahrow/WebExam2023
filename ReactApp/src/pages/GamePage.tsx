@@ -1,14 +1,15 @@
-import { Game } from "../components/game/game";
-import { CarList } from "../components/car-list";
-import { TrackList } from "../components/track-list";
+import { CarSelector } from "../components/game/car-selector";
+import { DriverSelector } from "../components/game/driver-selector";
+import { SelectorContainer } from "../components/ui/selector-container";
 
 export const GamePage = () => {
   return (
     <div>
       <h1>GAME PAGE</h1>
-      <Game />
-      <CarList />
-      <TrackList />
+      <SelectorContainer>
+        <DriverSelector />
+        <CarSelector />
+      </SelectorContainer>
     </div>
   );
 };

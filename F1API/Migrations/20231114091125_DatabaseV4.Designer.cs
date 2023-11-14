@@ -3,6 +3,7 @@ using System;
 using F1API.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace F1API.Migrations
 {
     [DbContext(typeof(F1APIContext))]
-    partial class F1APIContextModelSnapshot : ModelSnapshot
+    [Migration("20231114091125_DatabaseV4")]
+    partial class DatabaseV4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.13");
@@ -52,7 +55,7 @@ namespace F1API.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Aggression")
+                    b.Property<int?>("Agression")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("Experience")

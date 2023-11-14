@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import DriverService from "../services/DriverService";
-import { DriverCard } from "./ui/cards";
-import { CardContainer } from "./ui/card-container";
+import { DriverGameCard } from "./ui/cards";
 
 interface Driver {
   id: number;
@@ -9,9 +8,12 @@ interface Driver {
   imgUrl: string;
   age: number;
   nationality: string;
+  skill: number;
+  aggression: number;
+  experience: number;
 }
 
-interface DriverItemProps {
+export interface DriverItemProps {
   driverId?: number;
   driverName?: string;
 }
@@ -41,16 +43,20 @@ const DriverItem: React.FC<DriverItemProps> = ({ driverId, driverName }) => {
   }, [driverId, driverName]);
 
   return (
-    <CardContainer>
+    <div>
       {driver && (
-        <DriverCard
+        <DriverGameCard
           title={driver.name}
           nationality={driver.nationality}
           imgUrl={driver.imgUrl}
           age={driver.age}
+          key={driver.id}
+          aggression={driver.aggression}
+          experience={driver.experience}
+          skill={driver.skill}
         />
       )}
-    </CardContainer>
+    </div>
   );
 };
 

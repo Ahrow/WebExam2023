@@ -14,9 +14,21 @@ const CarService = (() => {
     return result.data;
   };
 
+  const getAllCarIds = async () => {
+    try {
+      const cars = await getAllCars();
+      const carIds = cars.map((car: { id: number }) => car.id);
+      return carIds;
+    } catch (error) {
+      console.log("Error getting driver IDs:", error);
+      throw error;
+    }
+  };
+
   return {
     getAllCars,
     getById,
+    getAllCarIds,
   };
 })();
 

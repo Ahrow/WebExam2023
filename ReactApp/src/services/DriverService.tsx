@@ -39,6 +39,17 @@ const DriverService = (() => {
     return result.data;
   };
 
+  const getAllDriverIds = async () => {
+    try {
+      const drivers = await getAllDrivers();
+      const driverIds = drivers.map((driver: { id: number }) => driver.id);
+      return driverIds;
+    } catch (error) {
+      console.log("Error getting driver IDs:", error);
+      throw error;
+    }
+  };
+
   const getById = async (id: number) => {
     const result = await axios.get(`${driverController}/${id}`);
     return result.data;
@@ -79,6 +90,7 @@ const DriverService = (() => {
     updateDriver,
     getByName,
     addDriver,
+    getAllDriverIds,
   };
 })();
 
