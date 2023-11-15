@@ -7,6 +7,7 @@ export const DriverContext = createContext<{
   getDriversFromService: () => void;
   addDriver: (inputs: { [key: string]: string }, image: File | null) => void;
   editDriver: ({ id, name }: { id: number; name: string }) => void;
+  deleteDriver: (driverId: number) => void;
 } | null>(null);
 
 export const DriverProvider = ({
@@ -48,9 +49,24 @@ export const DriverProvider = ({
     }
   };
 
+  const deleteDriver = async (driverId: number) => {
+    try {
+      await DriverService.deleteById(driverId);
+      await getDriversFromService();
+    } catch (error) {
+      console.log("Error in handleDeleteSubmit", error);
+    }
+  };
+
   return (
     <DriverContext.Provider
-      value={{ drivers, addDriver, editDriver, getDriversFromService }}
+      value={{
+        drivers,
+        deleteDriver,
+        addDriver,
+        editDriver,
+        getDriversFromService,
+      }}
     >
       {children}
     </DriverContext.Provider>

@@ -1,9 +1,16 @@
-import { ChangeEvent, FormEvent } from "react";
-import { useState } from "react";
-import DriverService from "../../services/DriverService";
+import { ChangeEvent, FormEvent, useContext, useState } from "react";
+import { DriverContext } from "../contexts/driver-context";
 
 export const DeleteDriverForm = () => {
-  const [deleteInput, setDeleteInput] = useState("");
+  const [deleteInput, setDeleteInput] = useState<string>("");
+
+  const context = useContext(DriverContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { deleteDriver } = context;
 
   const handleDeleteChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -12,17 +19,7 @@ export const DeleteDriverForm = () => {
 
   const handleDeleteSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    try {
-      const driverIdToDelete = parseInt(deleteInput);
-      console.log("id to delete:", driverIdToDelete);
-
-      if (driverIdToDelete) {
-        await DriverService.deleteById(driverIdToDelete);
-      }
-    } catch (error) {
-      console.log("Error in handleDeleteSubmit", error);
-    }
+    deleteDriver(Number(deleteInput));
   };
 
   return (
