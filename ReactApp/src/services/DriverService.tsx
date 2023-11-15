@@ -34,9 +34,28 @@ const DriverService = (() => {
       throw error;
     }
   };
+
+  const putDriver = async ({
+    driverId,
+    inputs,
+  }: {
+    driverId: number;
+    inputs: string;
+  }) => {
+    try {
+      const response = await axios.put(
+        `${driverController}/${driverId}`,
+        inputs
+      );
+      console.log("HAIL MERRY WORK", response);
+    } catch (error) {
+      console.log("Error in putDriver", error);
+    }
+  };
+
   const getAllDrivers = async () => {
-    const result = await axios.get(driverController);
-    return result.data;
+    const response = await axios.get(driverController);
+    return response.data;
   };
 
   const getAllDriverIds = async () => {
@@ -51,46 +70,41 @@ const DriverService = (() => {
   };
 
   const getById = async (id: number) => {
-    const result = await axios.get(`${driverController}/${id}`);
-    return result.data;
+    const response = await axios.get(`${driverController}/${id}`);
+    return response.data;
   };
 
   const getByName = async (name: string) => {
-    const result = await axios.get(`${driverController}/Get?name=${name}`);
-    return result.data;
+    const response = await axios.get(`${driverController}/Get?name=${name}`);
+    return response.data;
   };
 
   const deleteById = async (id: number) => {
     try {
-      const result = await axios.delete(`${driverController}/${id}`);
-      console.log("Delete Response:", result);
+      const response = await axios.delete(`${driverController}/${id}`);
+      console.log("Delete Response:", response);
 
-      if (result.status === 204) {
+      if (response.status === 204) {
         console.log("Driver deleted successfully");
       } else {
-        console.log("Error deleting driver. Status code:", result.status);
+        console.log("Error deleting driver. Status code:", response.status);
       }
 
-      return result.data;
+      return response.data;
     } catch (error) {
       console.log("Error deleting driver:", error);
       throw error;
     }
   };
 
-  const updateDriver = async (updatedDriver: string) => {
-    const result = await axios.put(driverController, updatedDriver);
-    return result.data;
-  };
-
   return {
     getAllDrivers,
     getById,
     deleteById,
-    updateDriver,
     getByName,
     addDriver,
     getAllDriverIds,
+    putDriver,
   };
 })();
 

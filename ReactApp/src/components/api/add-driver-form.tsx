@@ -1,10 +1,18 @@
-import { ChangeEvent, FormEvent } from "react";
+import { ChangeEvent, FormEvent, useContext } from "react";
 import { useState } from "react";
-import DriverService from "../../services/DriverService";
+import { DriverContext } from "../contexts/driver-context";
 
 export const AddDriverForm = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
   const [image, setImage] = useState<File | null>(null);
+
+  const context = useContext(DriverContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { addDriver } = context;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -25,7 +33,7 @@ export const AddDriverForm = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      await DriverService.addDriver(inputs, image);
+      await addDriver(inputs, image);
     } catch (error) {
       console.log("Error in handleSubmit", error);
     }

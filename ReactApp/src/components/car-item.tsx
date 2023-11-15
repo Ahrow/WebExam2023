@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CarService from "../services/CarService";
 import { CarCard } from "./ui/cards";
-import { CardContainer } from "./ui/card-container";
 import { CarItemProps } from "../interfaces/items-props";
 
 interface Car {

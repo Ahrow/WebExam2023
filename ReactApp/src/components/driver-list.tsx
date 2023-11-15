@@ -1,27 +1,16 @@
-import DriverService from "../services/DriverService";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { DriverCard } from "./ui/cards";
 import { CardContainer } from "./ui/card-container";
+import { DriverContext } from "./contexts/driver-context";
 
 export const DriverList = () => {
-  const [drivers, setDrivers] = useState<Driver[]>([]);
+  const context = useContext(DriverContext);
 
-  useEffect(() => {
-    getDriversFromService();
-  }, []);
-
-  const getDriversFromService = async () => {
-    const drivers = await DriverService.getAllDrivers();
-    setDrivers(drivers);
-  };
-
-  interface Driver {
-    id: number;
-    name: string;
-    imgUrl: string;
-    age: number;
-    nationality: string;
+  if (!context) {
+    return null;
   }
+
+  const { drivers } = context;
 
   return (
     <CardContainer>

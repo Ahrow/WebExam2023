@@ -11,7 +11,7 @@ export const HeroContainer = () => {
         </div>
         <div className="absolute mb-64">
           <HeroCard
-            title={<span className="text-teal-400">Game</span>}
+            title={<span className="text-teal-400">Drivers</span>}
             imageSrc="hero-bottom.jpg"
             description="
         Welcome to the formula 1 website, here you can check out the F1API in action. Go to the drivers page to try out all the CRUD operations."
