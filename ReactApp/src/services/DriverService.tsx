@@ -35,8 +35,6 @@ const DriverService = (() => {
     }
   };
 
-  //drivers: Driver[];
-
   const putDriver = async (driver: { id: number; [key: string]: unknown }) => {
     try {
       const response = await axios.put(

@@ -5,13 +5,13 @@ const CarService = (() => {
   const carController = `${baseURL}/Cars`;
 
   const getAllCars = async () => {
-    const result = await axios.get(carController);
-    return result.data;
+    const response = await axios.get(carController);
+    return response.data;
   };
 
   const getById = async (id: number) => {
-    const result = await axios.get(`${carController}/${id}`);
-    return result.data;
+    const response = await axios.get(`${carController}/${id}`);
+    return response.data;
   };
 
   const getAllCarIds = async () => {
