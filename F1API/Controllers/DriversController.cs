@@ -110,13 +110,31 @@ public async Task<IActionResult> Delete(int id)
     }
 }
 
-[HttpPut]
-public async Task<IActionResult> Put(Driver editedDriver) {
-    context.Entry(editedDriver).State = EntityState.Modified;
-    await context.SaveChangesAsync();
-    return NoContent();
-}
 
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Driver editedDriver)
+    {
+        if (id != editedDriver.Id)
+        {
+            return BadRequest();
+        }
+        try
+        {
+            Driver? driver = await context.Drivers.FindAsync(id);
+            if (driver != null)
+            {
+                context.Entry(driver).CurrentValues.SetValues(editedDriver);
+                await context.SaveChangesAsync();
+            }
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+            return StatusCode(500);
+        }
+    }
 }
 
 

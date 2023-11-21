@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\css\\main.css",
-      "PackagePath": "staticwebassets\\css\\main.css"
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
     },
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\car-mclaren.png",
@@ -15,6 +15,10 @@
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\car-renault.png",
       "PackagePath": "staticwebassets\\images\\car-renault.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\children-success.jpg",
+      "PackagePath": "staticwebassets\\images\\children-success.jpg"
     },
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-alexander-albon.jpg",
@@ -89,6 +93,22 @@
       "PackagePath": "staticwebassets\\images\\f1-amd-3.png"
     },
     {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\image 1.png",
+      "PackagePath": "staticwebassets\\images\\image 1.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
+      "PackagePath": "staticwebassets\\images\\knight.png"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\luftwaffels.webp",
+      "PackagePath": "staticwebassets\\images\\luftwaffels.webp"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\norway.png",
+      "PackagePath": "staticwebassets\\images\\norway.png"
+    },
+    {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-bahrain.png",
       "PackagePath": "staticwebassets\\images\\track-bahrain.png"
     },
@@ -103,6 +123,10 @@
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\scripts\\index.js",
+      "PackagePath": "staticwebassets\\scripts\\index.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.F1API.Microsoft.AspNetCore.StaticWebAssets.props",

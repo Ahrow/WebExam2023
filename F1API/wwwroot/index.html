@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
@@ -20,22 +20,102 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <section id="introduction">
-        <h1>Introduction</h1>
-        <p>
-          Welcome to the Formula 1 API, your gateway to all things Formula 1
-          racing. This documentation is here to guide you through the available
-          resources and how to access them using HTTP requests. Start by
-          checking out the "Getting Started" section to get a better
-          understanding of what is availalbe!
-        </p>
-      </section>
-      <section id="getting-started">
-        <h1>Getting Started</h1>
-        <p>Lets make your first API request to the Formula 1 API!</p>
-      </section>
-    </main>
+      <main>
+        <section id="introduction">
+          <h1>Introduction</h1>
+          <p>
+            Welcome to the Formula 1 API, your gateway to all things Formula 1
+            racing. This documentation is here to guide you through the
+            available resources and how to access them using HTTP requests.
+            Start by checking out the "Getting Started" section to get a better
+            understanding of what is availalbe!
+          </p>
+        </section>
+        <section id="getting-started">
+          <h1>Getting Started</h1>
+          <p>Lets make your first API request to the Formula 1 API!</p>
+        </section>
+        <section id="endpoints">
+          <article>
+            <h1>Base URL</h1>
+            <p>
+              The base URL is the root for all of the API, if you every make a
+              request and you get back a 404 NOT FOUND, you should start by
+              checking the base URL .
+            </p>
+            <div class="url-box">
+              <p>http://localhost:5292/api</p>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+              fugit neque a alias eveniet iure ad fugiat omnis, provident error
+              maxime ex hic aspernatur laboriosam earum. Ipsum voluptatum
+              voluptatem dolorem.
+            </p>
+          </article>
+          <article>
+            <h1>Get all drivers</h1>
+            <p>
+              You can access all the drivers from the api by using
+              <span class="styled-endpoint">/drivers</span> after the base url.
+            </p>
+            <div class="url-box">
+              <p>http://localhost:5292/api/drivers</p>
+            </div>
+            <p>The response will look like this:</p>
+            <div class="code-container">
+              <code>
+                [{"id":1,"name":"Max
+                Verstappen","age":26,"nationality":"Netherlands","imgUrl":"driver-verstappen.jpg","skill":90,"aggression":80,"experience":80},{"id":2,"name":"Lewis
+                Hamilton","age":38,"nationality":"United
+                Kingdom","imgUrl":"driver-hamilton.jpg","skill":90,"aggression":85,"experience":75}...]
+              </code>
+            </div>
+          </article>
+          <article>
+            <h1>Get specific driver by ID</h1>
+            <p>
+              You can access a specific driver by id using
+              <span class="styled-endpoint">/drivers/:id</span> after the base
+              url.
+            </p>
+            <div class="url-box">
+              <p>http://localhost:5292/api/drivers/1</p>
+            </div>
+            <p>The response will look like this:</p>
+            <div class="code-container">
+              <code>
+                {"id":1,"name":"Max
+                Verstappen","age":26,"nationality":"Netherlands","imgUrl":"driver-verstappen.jpg","skill":90,"aggression":80,"experience":80}
+              </code>
+            </div>
+          </article>
+          <article>
+            <h1>Get specific driver by name</h1>
+            <p>
+              You can access a specific driver by name by using
+              <span class="styled-endpoint">/drivers/Get?name=Name</span>after
+              the base URL
+            </p>
+
+            <div class="url-box">
+              <p>http://localhost:5292/api/Drivers/Get?name=Lewis</p>
+            </div>
+            <p>
+              It's important to note that you don't need the full name of the
+              driver, however it is case sensistive.
+            </p>
+            <p>The response should look like this:</p>
+            <div class="code-container">
+              <code>
+                [{"id":2,"name":"Lewis Hamilton","age":38,"nationality":"United
+                Kingdom","imgUrl":"driver-hamilton.jpg","skill":90,"aggression":85,"experience":75}]
+              </code>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

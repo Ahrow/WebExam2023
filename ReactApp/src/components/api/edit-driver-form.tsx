@@ -27,6 +27,7 @@ export const EditDriverForm = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     editDriver({ id: driverId, name: inputs.name });
+    console.log("inputs", inputs);
   };
 
   return (

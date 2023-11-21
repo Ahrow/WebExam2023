@@ -28,8 +28,14 @@ export const DriverProvider = ({
 
   const editDriver = async ({ id, name }: { id: number; name: string }) => {
     try {
-      await DriverService.putDriver({ driverId: id, inputs: name });
-      await getDriversFromService();
+      // assume all drivers in `drivers`
+      const driver = drivers.find((d) => d.id == id);
+      driver.name = name;
+
+      await DriverService.putDriver(driver);
+      // maybe needed to force re-rendering
+      setDrivers([...drivers]);
+      // await getDriversFromService();
     } catch (error) {
       console.log("Error in handleSubmit", error);
     }

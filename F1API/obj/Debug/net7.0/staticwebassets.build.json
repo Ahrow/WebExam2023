@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Tb3GyyV2REW0tELLMyMS816b2L581e9GcB7tXUSoQ20=",
+  "Hash": "GpesRp4DEDg+sC0C8KxZWawFpagKluJpPf2Smm/NjdA=",
   "Source": "F1API",
   "BasePath": "_content/F1API",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\css\\main.css",
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\css\\index.css",
       "SourceId": "F1API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
       "BasePath": "_content/F1API",
-      "RelativePath": "css/main.css",
+      "RelativePath": "css/index.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,7 +31,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\main.css"
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
     },
     {
       "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\car-mclaren.png",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\car-renault.png"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\children-success.jpg",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/children-success.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\children-success.jpg"
     },
     {
       "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-alexander-albon.jpg",
@@ -391,6 +408,74 @@
       "OriginalItemSpec": "wwwroot\\images\\f1-amd-3.png"
     },
     {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\image 1.png",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/image 1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\image 1.png"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/knight.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\knight.png"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\luftwaffels.webp",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/luftwaffels.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\luftwaffels.webp"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\norway.png",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/norway.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\norway.png"
+    },
+    {
       "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-bahrain.png",
       "SourceId": "F1API",
       "SourceType": "Discovered",
@@ -457,6 +542,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\scripts\\index.js",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "scripts/index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripts\\index.js"
     }
   ]
 }

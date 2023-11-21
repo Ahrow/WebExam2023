@@ -1,33 +1,43 @@
 import { useState, useEffect } from "react";
 import { CarItem } from "../car-item";
 import CarService from "../../services/CarService";
-import { CarItemProps } from "../../interfaces/items-props";
+
+interface CarStats {
+  carId: number;
+  name: string;
+  speed: number;
+  handling: number;
+  acceleration: number;
+}
 
 export const CarSelector: React.FC = () => {
-  const [selectedCar, setSelectedCar] = useState<CarItemProps | null>(null);
+  const [selectedCar, setSelectedCar] = useState<CarStats | null>(null);
   const [carIds, setCarIds] = useState<number[]>([]);
 
   useEffect(() => {
-    const fetchCarIds = async () => {
+    const fetchCarData = async () => {
       try {
         const fetchedCarIds = await CarService.getAllCarIds();
         setCarIds(fetchedCarIds);
 
         if (fetchedCarIds.length > 0) {
-          setSelectedCar({ carId: fetchedCarIds[0] });
+          const selectedCarId = fetchedCarIds[0];
+          const carStats = await CarService.getById(selectedCarId);
+          setSelectedCar({ carId: selectedCarId, ...carStats });
         }
       } catch (error) {
-        console.error("Error fetching car IDs:", error);
+        console.error("Error fetching car data:", error);
       }
     };
-    fetchCarIds();
+    fetchCarData();
   }, []);
 
-  const handleNextCar = () => {
+  const handleNextCar = async () => {
     const nextCarIndex =
       (selectedCar ? carIds.indexOf(selectedCar.carId || 0) : 0) + 1;
     const nextCarId = carIds[nextCarIndex % carIds.length];
-    setSelectedCar({ carId: nextCarId });
+    const carStats = await CarService.getById(nextCarId);
+    setSelectedCar({ carId: nextCarId, ...carStats });
   };
 
   const handleSelectCar = () => {
@@ -35,15 +45,20 @@ export const CarSelector: React.FC = () => {
   };
 
   return (
-    <div className="h-[400px] w-[500px] bg-purple-700 flex justify-center flex-col items-center">
+    <div className="flex flex-col justify-center items-center">
       <h3>Select Car</h3>
-      <CarItem carId={selectedCar?.carId} />
-      <button className="bg-yellow-400 rounded-lg p-2" onClick={handleNextCar}>
-        Next Car
-      </button>
-      <button className="bg-red-400 rounded-lg p-2" onClick={handleSelectCar}>
-        Select Car
-      </button>
+      {selectedCar && <CarItem carId={selectedCar?.carId} />}
+      <div>
+        <button className="bg-red-400 rounded-lg p-2" onClick={handleNextCar}>
+          Next Car
+        </button>
+        <button
+          className="bg-teal-400 rounded-lg p-2"
+          onClick={handleSelectCar}
+        >
+          Select Car
+        </button>
+      </div>
     </div>
   );
 };

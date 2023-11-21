@@ -24,7 +24,7 @@ export const TrackList = () => {
   }
 
   return (
-    <div>
+    <div className="mt-20 p-10">
       {tracks.map((tracks) => (
         <TrackCard
           name={tracks.name}

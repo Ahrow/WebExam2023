@@ -10,6 +10,7 @@ header {
   font-size: x-large;
   font-weight: 900;
 }
+
 nav {
   display: flex;
   justify-content: center;
@@ -38,10 +39,37 @@ li a:hover {
 .active {
   background-color: #4caf50;
 }
-section {
+#introduction,
+#getting-started {
   text-align: center;
   margin: 0 auto;
   width: 50%;
+  background: #333;
+  padding: 10px;
+}
+.url-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+  background: #333;
+  padding: 10px;
+}
+
+.styled-endpoint {
+  font-weight: bold;
+  color: rgb(241, 24, 24);
+}
+
+article {
+  text-align: left;
+  margin: 0 auto;
+  width: 50%;
+  border: 2px solid black;
+  padding: 10px;
+}
+.code-container {
   background: #333;
   padding: 10px;
 }

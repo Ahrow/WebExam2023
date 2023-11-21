@@ -1,17 +1,7 @@
 import { useState, useEffect } from "react";
 import DriverService from "../services/DriverService";
 import { DriverGameCard } from "./ui/cards";
-
-interface Driver {
-  id: number;
-  name: string;
-  imgUrl: string;
-  age: number;
-  nationality: string;
-  skill: number;
-  aggression: number;
-  experience: number;
-}
+import { Driver } from "../interfaces/items-props";
 
 export interface DriverItemProps {
   driverId?: number;
@@ -33,7 +23,6 @@ const DriverItem: React.FC<DriverItemProps> = ({ driverId, driverName }) => {
         } else {
           fetchedDriver = null;
         }
-
         setDriver(fetchedDriver);
       } catch (error) {
         console.error("Error fetching driver:", error);

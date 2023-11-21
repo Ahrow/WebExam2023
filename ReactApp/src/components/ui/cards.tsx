@@ -68,14 +68,15 @@ export const CarCard = ({
   imgUrl,
 }: CarCardProps) => {
   return (
-    <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
+    <div className="bg-slate-900 h-[400px] rounded-md flex flex-col justify-center items-center text-white">
       <h1 className="text-xl font-semibold">{name}</h1>
-      <img
-        height={300}
-        width={300}
-        src={`http://localhost:5292/images/${imgUrl}`}
-        alt={`Image of a ${name} car.`}
-      />
+      <div className="h-[300px] w-[300px]">
+        <img
+          className="h-[300px] w-[300px] rounded-2xl object-contain"
+          src={`http://localhost:5292/images/${imgUrl}`}
+          alt={`Image of a ${name} car.`}
+        />
+      </div>
       <p>speed:{speed}</p>
       <p>acceleration:{acceleration}</p>
       <p>handling:{handling}</p>

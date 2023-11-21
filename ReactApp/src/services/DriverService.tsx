@@ -35,17 +35,14 @@ const DriverService = (() => {
     }
   };
 
-  const putDriver = async ({
-    driverId,
-    inputs,
-  }: {
-    driverId: number;
-    inputs: string;
-  }) => {
+  //drivers: Driver[];
+
+  const putDriver = async (driver: { id: number; [key: string]: unknown }) => {
     try {
       const response = await axios.put(
-        `${driverController}/${driverId}`,
-        inputs
+        `${driverController}/${driver.id}`,
+        driver,
+        { headers: { "Content-Type": "application/json" } }
       );
       console.log("HAIL MERRY WORK", response);
     } catch (error) {
