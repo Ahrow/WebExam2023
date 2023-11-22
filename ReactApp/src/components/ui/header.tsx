@@ -6,9 +6,9 @@ export const Header = () => {
       <h1 className="absolute sm:top-32 sm:text-6xl top-10 text-2xl font-bold text-red-600 ml-1 sm:ml-4">
         Formula F1
       </h1>
-      <h3 className="absolute top-16 sm:top-48 text-white ml-1 sm:ml-4 sm:text-5xl text-xl">
+      <h2 className="absolute top-16 sm:top-48 text-white ml-1 sm:ml-4 sm:text-5xl text-xl">
         Fast thrills
-      </h3>
+      </h2>
       <Navbar />
     </div>
   );

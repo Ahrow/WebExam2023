@@ -5,117 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API</title>
     <link rel="stylesheet" href="./css/index.css" />
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-    ></script>
   </head>
   <body>
     <header>
-      <h1>Formula 1 API</h1>
+      <h1>F1 API</h1>
+    </header>
+    <main>
+      <div id="nav-box">
       <nav>
         <ul>
-          <li><a href="http://localhost:5173/">F1 APP</a></li>
-          <li><a href="./getting-started.html">Getting Started</a></li>
+          <h3 class="navbar-h3">Introduction</h3>
+          <li><a href="#getting-started">Getting started</a></li>
+          <h3 class="navbar-h3">Crud</h3>
+          <li><a href="#art-1">Get all drivers</a></li>
+          <li><a href="#art-2">Get driver by id</a></li>
+          <li><a href="#art-3">Get driver by name</a></li>
+          <li><a href="#art-4">Post driver</a></li>
+          <li><a href="#art-5">Delete driver by id</a></li>
+          <li><a href="#art-6">Put driver by id</a></li>
+          <li><a href="#art-7">Put driver by id</a></li>
         </ul>
       </nav>
-    </header>
-      <main>
-        <section id="introduction">
-          <h1>Introduction</h1>
-          <p>
-            Welcome to the Formula 1 API, your gateway to all things Formula 1
-            racing. This documentation is here to guide you through the
-            available resources and how to access them using HTTP requests.
-            Start by checking out the "Getting Started" section to get a better
-            understanding of what is availalbe!
-          </p>
-        </section>
-        <section id="getting-started">
-          <h1>Getting Started</h1>
-          <p>Lets make your first API request to the Formula 1 API!</p>
-        </section>
-        <section id="endpoints">
-          <article>
-            <h1>Base URL</h1>
-            <p>
-              The base URL is the root for all of the API, if you every make a
-              request and you get back a 404 NOT FOUND, you should start by
-              checking the base URL .
-            </p>
-            <div class="url-box">
-              <p>http://localhost:5292/api</p>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-              fugit neque a alias eveniet iure ad fugiat omnis, provident error
-              maxime ex hic aspernatur laboriosam earum. Ipsum voluptatum
-              voluptatem dolorem.
-            </p>
-          </article>
-          <article>
-            <h1>Get all drivers</h1>
-            <p>
-              You can access all the drivers from the api by using
-              <span class="styled-endpoint">/drivers</span> after the base url.
-            </p>
-            <div class="url-box">
-              <p>http://localhost:5292/api/drivers</p>
-            </div>
-            <p>The response will look like this:</p>
-            <div class="code-container">
-              <code>
-                [{"id":1,"name":"Max
-                Verstappen","age":26,"nationality":"Netherlands","imgUrl":"driver-verstappen.jpg","skill":90,"aggression":80,"experience":80},{"id":2,"name":"Lewis
-                Hamilton","age":38,"nationality":"United
-                Kingdom","imgUrl":"driver-hamilton.jpg","skill":90,"aggression":85,"experience":75}...]
-              </code>
-            </div>
-          </article>
-          <article>
-            <h1>Get specific driver by ID</h1>
-            <p>
-              You can access a specific driver by id using
-              <span class="styled-endpoint">/drivers/:id</span> after the base
-              url.
-            </p>
-            <div class="url-box">
-              <p>http://localhost:5292/api/drivers/1</p>
-            </div>
-            <p>The response will look like this:</p>
-            <div class="code-container">
-              <code>
-                {"id":1,"name":"Max
-                Verstappen","age":26,"nationality":"Netherlands","imgUrl":"driver-verstappen.jpg","skill":90,"aggression":80,"experience":80}
-              </code>
-            </div>
-          </article>
-          <article>
-            <h1>Get specific driver by name</h1>
-            <p>
-              You can access a specific driver by name by using
-              <span class="styled-endpoint">/drivers/Get?name=Name</span>after
-              the base URL
-            </p>
-
-            <div class="url-box">
-              <p>http://localhost:5292/api/Drivers/Get?name=Lewis</p>
-            </div>
-            <p>
-              It's important to note that you don't need the full name of the
-              driver, however it is case sensistive.
-            </p>
-            <p>The response should look like this:</p>
-            <div class="code-container">
-              <code>
-                [{"id":2,"name":"Lewis Hamilton","age":38,"nationality":"United
-                Kingdom","imgUrl":"driver-hamilton.jpg","skill":90,"aggression":85,"experience":75}]
-              </code>
-            </div>
-          </article>
-        </section>
-      </main>
     </div>
+    <div id="content-box">
+      <section id="getting-started">
+        <h2>Getting started</h2>
+        <p>Welcome the F1API! Here you can find the documentation that explains how to use the resources available and how to consume them with
+          HTTP requests. </p>
+      </section>
+      <section id="drivers">
+        <h1>/drivers</h1>
+        <article id="art-1">
+        <button  type="button" class="collapsible">
+          <span class="get-btn">GET</span>
+          <p class="url">
+            http://localhost:5292/api<span class="url-endpoint">/Drivers</span>
+          </p>
+        </button>
+        <div class="content">
+          <h2>Get all drivers</h2>
+          <h3>Responses:</h3>
+          <p>200: Ok</p>
+          <p>404: Not found</p>
+          <p>500: Internal server error</p>
+          <button class="collapsible">
+            Example: http://localhost:5292/api/Drivers ||| Show ok response:
+          </button>
+          <div class="content">
+          <pre>
+          <code class="code">
+            [
+  {
+    "id": 1,
+    "name": "aaaaa",
+    "age": 26,
+    "nationality": "Netherlands",
+    "imgUrl": "driver-verstappen.jpg",
+    "skill": 90,
+    "aggression": 80,
+    "experience": 80
+  },
+  {
+    "id": 2,
+    "name": "Lewis Hamilton",
+    "age": 38,
+    "nationality": "United Kingdom",
+    "imgUrl": "driver-hamilton.jpg",
+    "skill": 90,
+    "aggression": 85,
+    "experience": 75
+  },...
+          ]
+          </code>
+         </pre>
+        </div>
+      </article>
+      <article id="art-2">
+        <button type="button" class="collapsible">
+          <span class="get-btn">GET</span>
+          <p class="url">
+            http://localhost:5292/api<span class="url-endpoint">/Drivers/{id}</span>
+          </p>
+        </button>
+        <div class="content">
+          <h2>Get driver by id</h2>
+          <h3>Parameter:</h3>
+          <p>id : integer</p>
+          <h3>Responses:</h3>
+          <p>200: Ok</p>
+          <p>404: Not found</p>
+          <p>500: Internal server error</p>
+          <button class="collapsible">
+            Example: http://localhost:5292/api/Drivers/1 ||| Show ok response:
+          </button>
+          <div class="content">
+          <pre>
+          <code class="code">
+            [
+            {
+              "id": 1,
+              "name": "Max Verstappen",
+              "age": 26,
+              "nationality": "Netherlands",
+              "imgUrl": "driver-verstappen.jpg",
+              "skill": 90,
+              "aggression": 80,
+              "experience": 80
+            }
+          ]
+          </code>
+         </pre>
+        </div>
+      </article>
+      <article id="art-3">
+        <button type="button" class="collapsible">
+          <span class="get-btn">GET</span>
+          <p class="url">
+            http://localhost:5292/api/Drivers<span class="url-endpoint">/Get?name=Name</span>
+          </p>
+        </button>
+        <div class="content">
+          <h2>Get driver by name</h2>
+          <h3>Parameter:</h3>
+          <p>Name : string</p>
+          <h3>Responses:</h3>
+          <p>200: Ok</p>
+          <p>404: Not found</p>
+          <p>500: Internal server error</p>
+          <button class="collapsible">
+            Example: http://localhost:5292/api/Drivers/Get?name=Max ||| Show ok response:
+          </button>
+          <div class="content">
+          <pre>
+          <code class="code">
+            [
+            {
+              "id": 1,
+              "name": "Max Verstappen",
+              "age": 26,
+              "nationality": "Netherlands",
+              "imgUrl": "driver-verstappen.jpg",
+              "skill": 90,
+              "aggression": 80,
+              "experience": 80
+            }
+          ]
+          </code>
+         </pre>
+        </div>
+      </article>
+      <article id="art-4">
+        <button type="button" class="collapsible">
+          <span id="post-btn" class="get-btn">POST</span>
+          <p class="url">
+            http://localhost:5292/api<span class="url-endpoint">/Drivers</span>
+          </p>
+        </button>
+        <div class="content">
+          <h2>Put driver on ID</h2>
+          <h3>Parameter:</h3>
+          <p>Name: string</p>
+          <p>Age: integer</p>
+          <p>Nationality: string</p>
+          <p>ImgUrl: string</p>
+
+          <h3>Responses:</h3>
+          <p>200: Ok </p>
+          <p>500: Internal server error</p>
+          <button class="collapsible">
+            Example: http://localhost:5292/api/Drivers ||| Show ok:
+          </button>
+          <div class="content">
+          <pre>
+          <code class="code">
+            [
+            {
+              "id": 13,
+              "name": "James Bond",
+              "age": 45,
+              "nationality": "United Kingdom",
+              "imgUrl": "james-bond.jpg",
+            }
+          ]
+          </code>
+         </pre>
+        </div>
+      </article>
+      <article id="art-5">
+        <button type="button" class="collapsible">
+          <span id="delete-btn" class="get-btn">DELETE</span>
+          <p class="url">
+            http://localhost:5292/api/Drivers<span class="url-endpoint">/{id}</span>
+          </p>
+        </button>
+        <div class="content">
+          <h2>Delete driver by ID</h2>
+          <h3>Parameter:</h3>
+          <p>ID : integer</p>
+          <h3>Responses:</h3>
+          <p>200: Ok </p>
+          <p>204: No content (succcesfully fullfilled request, no response in payload body) </p>
+          <p>404: Not found</p>
+          <p>500: Internal server error</p>
+          <button class="collapsible">
+            Example: http://localhost:5292/api/Drivers/1 ||| Show ok/204 response:
+          </button>
+          <div class="content">
+          <pre>
+          <code class="code">
+            200 succses
+            204 response headers:
+                                  access-control-allow-origin: * 
+                                  date: Wed,22 Nov 2023 12:46:19 GMT 
+                                  server: Kestrel 
+          </code>
+         </pre>
+        </div>
+      </article>
+      <article id="art-6">
+        <button type="button" class="collapsible">
+          <span id="put-btn" class="get-btn">PUT</span>
+          <p class="url">
+            http://localhost:5292/api/Drivers<span class="url-endpoint">/{id}</span>
+          </p>
+        </button>
+        <div class="content">
+          <h2>Put driver on ID</h2>
+          <h3>Parameter:</h3>
+          <p>ID : integer</p>
+          <p>Name: string</p>
+          <h3>Responses:</h3>
+          <p>200: Ok </p>
+          <p>404: Not found</p>
+          <p>400: Error: Bad request (will not go through due to client error)</p>
+          <p>500: Internal server error</p>
+          <button class="collapsible">
+            Example: http://localhost:5292/api/Drivers/1 ||| with name "new name" Show ok:
+          </button>
+          <div class="content">
+          <pre>
+          <code class="code">
+            [
+            {
+              "id": 1,
+              "name": "new name",
+              "age": 26,
+              "nationality": "Netherlands",
+              "imgUrl": "driver-verstappen.jpg",
+              "skill": 90,
+              "aggression": 80,
+              "experience": 80
+            }
+          ]
+          </code>
+         </pre>
+        </div>
+      </article>
+      </section>
+      <section id="image-upload">
+        <h2>/ImageUpload</h2>
+        <article id="art-7">
+          <button type="button" class="collapsible">
+            <span id="post-btn" class="get-btn">POST</span>
+            <p class="url">
+              http://localhost:5292/api<span class="url-endpoint">/ImageUpload</span>
+            </p>
+          </button>
+          <div class="content">
+            <h2>Upload image</h2>
+            <h3>Parameter:</h3>
+            <p>FormFile: string($binary)</p>
+          
+  
+            <h3>Responses:</h3>
+            <p>200: Ok </p>
+            <p>400: Bad Request ("The formfield is required")</p>
+            <p>500: Internal server error</p>
+            <button class="collapsible">
+              Example: http://localhost:5292/api/Drivers ||| Show ok:
+            </button>
+            <div class="content">
+            <pre>
+            <code class="code">
+              200 success
+            </code>
+           </pre>
+          </div>
+        </article>
+      </section>
+    </div>
+    </main>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

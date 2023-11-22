@@ -1,11 +1,6 @@
 import { useState } from "react";
 
 export const GameV2 = () => {
-  const selectedCar = JSON.parse(localStorage.getItem("selectedCar") || "{}");
-  const selectedDriver = JSON.parse(
-    localStorage.getItem("selectedDriver") || "{}"
-  );
-
   interface DriverProps {
     name?: string;
     skill: number;
@@ -49,12 +44,23 @@ export const GameV2 = () => {
       const eventChance = Math.random();
       if (eventChance < 0.2) {
         const eventMessage = generateEvent(lap, driver, car);
-        await sleep(Math.floor(Math.random() * 2000) + 1000);
+        await sleep(Math.floor(Math.random() * 1500) + 1000);
         setRaceLog((prevLog) => [...prevLog, eventMessage]);
 
-        if (eventMessage.includes("RENAULT")) {
+        if (eventMessage.includes("wheels")) {
+          handleFinishRace();
+          setRaceLog((prevLog) => [
+            ...prevLog,
+            `Like the creator of this game, who had a renault that cost him 61k in repairs, you made a poor choice! Your score: ${score}`,
+          ]);
           return { score: 0 };
         }
+      }
+      if (lap === laps) {
+        const finalMessage = `The race has ended! Your score: ${score}`;
+        handleFinishRace();
+        await sleep(Math.floor(Math.random() * 2000) + 1000);
+        setRaceLog((prevLog) => [...prevLog, finalMessage]);
       }
 
       const lapTime = averageTime * (1 + Math.random() * 0.2);
@@ -95,14 +101,8 @@ export const GameV2 = () => {
       case 4:
         if (Car.name === "renault") {
           return (
-            <div>
-              `Event on lap ${lap}:DEAR GOD! THE {Car.name} Lost its wheels!$
-              RENAULT IS TERRIBLE!`
-              <img
-                src="src/assets/renault-in-action.gif"
-                alt="A gif of a Renault losing its wheels"
-              />
-            </div>
+            `Event on lap ${lap}: Oh no! The ${Car.name} has lost its wheels!!!` +
+            ` ${Driver.name} has crashed!`
           );
         }
         if (Car.speed > 70) {
@@ -124,9 +124,18 @@ export const GameV2 = () => {
     new Promise((resolve) => setTimeout(resolve, ms));
 
   const handleStartRace = async () => {
+    const selectedCar = JSON.parse(localStorage.getItem("selectedCar") || "{}");
+    const selectedDriver = JSON.parse(
+      localStorage.getItem("selectedDriver") || "{}"
+    );
     setRaceLog([]);
     const raceResult = await calculateRace(selectedDriver, selectedCar);
     console.log("Race Result:", raceResult);
+  };
+
+  const handleFinishRace = () => {
+    localStorage.removeItem("selectedCar");
+    localStorage.removeItem("selectedDriver");
   };
 
   return (

@@ -3,22 +3,29 @@
 ## BUG FIX:
 
 FUNCTIONALITY:
+
+[] move interfaces and props to interfaces
+[] fix minor typescript complaints
+[] FINISH WIN / LOSE condition game
+[] ADD driver item that render dynamically on search id/name
+[] Implement TOAST messages everywhere
+
 [x] CORS ERROR on 3d HttpGET -> Check [Action] or other options
 [x] Search function -> ID works / FIX NAME !!! - DriverService.tsx:17
-[] Still needs Capital letter
+[x] Still needs Capital letter
 
 - GET http://localhost:5292/api/Drivers/name/Verstappen 404 (Not Found)
 - This is path is wrong -> Need check for partial string aswell!!! "verst" should return verstappen etc.
 
 [x] Fix Type ERROR searchDriver [driver]
-[] FIX TYPE ERROR Dereference of a possibly null reference.CS8602
+[x] FIX TYPE ERROR Dereference of a possibly null reference.CS8602
 string? Driver.Name { get; set; }
 'Name' may be null here.
-[]
+[x]
 
 UI:
-[] FIX HEADER -> whitespace on right when window scales down
-[] FIX mobile/desktop/tablet size
+[x] FIX HEADER -> whitespace on right when window scales down
+[x] FIX mobile/desktop/tablet size
 []
 
 ## TODO:
@@ -29,25 +36,24 @@ Main functionality:
 [x] Get something by name -> Implement search
 [x] Delete something
 [x] Create something (Including image upload)
-[] Update something
-
-[] RENDER LIST dynamically based on CRUD
+[x] Update something
+[x] RENDER LIST dynamically based on CRUD
 
 Extra functionality:
 RACETRACK -> Number of turns 50, Racetrack length,
 
 F1 Race Car game
-[] Setup backend/database for Car
+[x] Setup backend/database for Car
 
 - Stats: Speed/Acceleration/Handling
 - CarName, CarImage
 
-[] Driver & Car selector
+[x] Driver & Car selector
 
 - Choose card/driver from API (render card ?)
 - Retrieve stats from API
 
-[] Race simulation
+[x] Race simulation
 
 - Simulate race based on:
   - CarStats

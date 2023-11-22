@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CarService from "../services/CarService";
 import { CarCard } from "./ui/cards";
-import { CarItemProps } from "../interfaces/items-props";
 
 interface Car {
   id: number;
@@ -10,6 +9,10 @@ interface Car {
   handling: number;
   acceleration: number;
   imgUrl: string;
+}
+
+interface CarItemProps {
+  carId?: number;
 }
 
 export const CarItem: React.FC<CarItemProps> = ({ carId }: CarItemProps) => {

@@ -1,8 +1,28 @@
-import {
-  DriverCardProps,
-  CarCardProps,
-  TrackCardProps,
-} from "../../interfaces/card-props";
+export interface DriverCardProps {
+  title?: string;
+  imgUrl?: string;
+  age?: number;
+  nationality?: string;
+  skill?: number;
+  aggression?: number;
+  experience?: number;
+}
+
+export interface CarCardProps {
+  name?: string;
+  speed?: number;
+  acceleration?: number;
+  handling?: number;
+  imgUrl?: string;
+}
+
+export interface TrackCardProps {
+  name?: string;
+  distance?: number;
+  turns?: number;
+  laps?: number;
+  imgUrl?: string;
+}
 
 export const DriverCard = ({
   title,
@@ -69,7 +89,7 @@ export const CarCard = ({
 }: CarCardProps) => {
   return (
     <div className="bg-slate-900 h-[400px] rounded-md flex flex-col justify-center items-center text-white">
-      <h1 className="text-xl font-semibold">{name}</h1>
+      <h2 className="text-xl font-semibold">{name}</h2>
       <div className="h-[300px] w-[300px]">
         <img
           className="h-[300px] w-[300px] rounded-2xl object-contain"
@@ -128,7 +148,7 @@ export const HeroCard = ({
         <img
           className="sm:h-[200px] sm:w-[800px] h-[150px] w-[400px] rounded-b-xl object-cover"
           src={`src/assets/${imageSrc}`}
-          alt="Background image of a teal and red formula 1 car."
+          alt="Background image of a formula 1 car."
         />
       </div>
     </div>
