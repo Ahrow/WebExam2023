@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\images\\car-renault.png"
     },
     {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\children-success.jpg",
-      "PackagePath": "staticwebassets\\images\\children-success.jpg"
-    },
-    {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\driver-alexander-albon.jpg",
       "PackagePath": "staticwebassets\\images\\driver-alexander-albon.jpg"
     },
@@ -91,22 +87,6 @@
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\f1-amd-3.png",
       "PackagePath": "staticwebassets\\images\\f1-amd-3.png"
-    },
-    {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\image 1.png",
-      "PackagePath": "staticwebassets\\images\\image 1.png"
-    },
-    {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
-      "PackagePath": "staticwebassets\\images\\knight.png"
-    },
-    {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\luftwaffels.webp",
-      "PackagePath": "staticwebassets\\images\\luftwaffels.webp"
-    },
-    {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\norway.png",
-      "PackagePath": "staticwebassets\\images\\norway.png"
     },
     {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-bahrain.png",
