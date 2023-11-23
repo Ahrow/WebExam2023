@@ -40,7 +40,7 @@ export const DeleteDriverForm = () => {
           />
         </label>
         <input
-          className="p-2 rounded-md bg-red-400"
+          className="p-2 rounded-md bg-red-500"
           type="submit"
           value="Delete Driver"
         />

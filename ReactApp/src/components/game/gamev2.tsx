@@ -150,14 +150,14 @@ export const GameV2 = () => {
   return (
     <div className="flex flex-col items-center mt-20 bg-slate-900 text-white h-full">
       <button
-        className="text-white text-lg p-4 bg-yellow-400 rounded-lg mb-4"
+        className="text-white text-lg p-4 bg-purple-500 rounded-lg mb-4"
         onClick={handleStartRace}
       >
         Start the Race
       </button>
 
       <div className="race-log-container h-[500px]">
-        <h3>Race Log</h3>
+        <h3 className=" font-bold">Race Log</h3>
         <ul>
           {raceLog.map((event, index) => (
             <li key={index}>{event}</li>

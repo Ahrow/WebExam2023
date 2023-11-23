@@ -51,11 +51,11 @@ const SearchDriverForm: React.FC = () => {
             }
           />
         </label>
-        <button className="rounded-md bg-green-400 p-2" onClick={handleSearch}>
-          Search
-        </button>
-        <button className="rounded-md bg-red-400 p-2" onClick={handleReset}>
+        <button className="rounded-md bg-red-500 p-2" onClick={handleReset}>
           Reset
+        </button>
+        <button className="rounded-md bg-purple-500 p-2" onClick={handleSearch}>
+          Search
         </button>
       </div>
     </section>

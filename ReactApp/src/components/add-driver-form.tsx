@@ -89,7 +89,7 @@ export const AddDriverForm = () => {
           />
         </label>
         <input
-          className="rounded-md bg-green-400 mb-2 p-2"
+          className="rounded-md bg-purple-500 mb-2 p-2"
           type="submit"
           value="Add Driver"
         />

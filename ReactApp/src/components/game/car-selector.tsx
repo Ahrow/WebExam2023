@@ -49,11 +49,11 @@ export const CarSelector: React.FC = () => {
       <h3 className="text-xl my-4">Select Car</h3>
       {selectedCar && <CarItem carId={selectedCar?.carId} />}
       <div className="my-4 w-full flex flex-wrap justify-center gap-2">
-        <button className="bg-red-400 rounded-lg p-2" onClick={handleNextCar}>
+        <button className="bg-red-500 rounded-lg p-2" onClick={handleNextCar}>
           Next Car
         </button>
         <button
-          className="bg-teal-400 rounded-lg p-2"
+          className="bg-purple-500 rounded-lg p-2"
           onClick={handleSelectCar}
         >
           Select Car
