@@ -1,5 +1,5 @@
 import { FormEvent, ChangeEvent, useState, useContext } from "react";
-import { DriverContext } from "../contexts/driver-context";
+import { DriverContext } from "./contexts/driver-context";
 
 export const EditDriverForm = () => {
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});

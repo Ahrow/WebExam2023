@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Driver } from "../components/driver-item";
 
 const DriverService = (() => {
   const baseURL = "http://localhost:5292/api";
@@ -35,7 +36,7 @@ const DriverService = (() => {
     }
   };
 
-  const putDriver = async (driver: { id: number; [key: string]: unknown }) => {
+  const putDriver = async (driver: Driver) => {
     try {
       const response = await axios.put(
         `${driverController}/${driver.id}`,
@@ -71,7 +72,7 @@ const DriverService = (() => {
 
   const getByName = async (name: string) => {
     const response = await axios.get(`${driverController}/Get?name=${name}`);
-    return response.data;
+    return response.data[0];
   };
 
   const deleteById = async (id: number) => {

@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react";
 import DriverService from "../services/DriverService";
 import { DriverGameCard } from "./ui/cards";
-import { Driver } from "../interfaces/items-props";
+
+export interface Driver {
+  id: number;
+  name?: string;
+  imgUrl: string;
+  age?: number;
+  nationality?: string;
+  skill?: number;
+  aggression?: number;
+  experience?: number;
+}
 
 export interface DriverItemProps {
   driverId?: number;

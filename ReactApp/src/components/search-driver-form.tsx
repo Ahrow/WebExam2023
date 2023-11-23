@@ -1,33 +1,26 @@
-import { useState } from "react";
-import DriverService from "../../services/DriverService";
+import { useState, useContext } from "react";
+import { DriverContext } from "./contexts/driver-context";
 
 const SearchDriverForm: React.FC = () => {
   const [searchType, setSearchType] = useState<"id" | "name">("id");
   const [searchValue, setSearchValue] = useState<string | number>("");
-  const [driver, setDriver] = useState<{ [key: string]: string }>({}); // FIX TYPE ERROR
-  const [error, setError] = useState<string | null>(null);
+
+  const context = useContext(DriverContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { searchDriver, resetSearch } = context;
+
+  const handleReset = () => {
+    setSearchType("id");
+    setSearchValue("");
+    resetSearch();
+  };
 
   const handleSearch = async () => {
-    if (searchValue) {
-      try {
-        console.log("Search Value:", searchValue);
-
-        let fetchedDriver;
-
-        if (searchType === "id") {
-          fetchedDriver = await DriverService.getById(Number(searchValue));
-        } else {
-          fetchedDriver = await DriverService.getByName(String(searchValue));
-        }
-
-        setDriver(fetchedDriver);
-        setError(null);
-        console.log("driver", fetchedDriver);
-      } catch (error) {
-        setError("Error fetching driver");
-        console.error("Error fetching driver:", error);
-      }
-    }
+    searchDriver(searchValue, searchType);
   };
 
   return (
@@ -58,8 +51,11 @@ const SearchDriverForm: React.FC = () => {
             }
           />
         </label>
-        <button className="rounded-md bg-red-400 p-2" onClick={handleSearch}>
+        <button className="rounded-md bg-green-400 p-2" onClick={handleSearch}>
           Search
+        </button>
+        <button className="rounded-md bg-red-400 p-2" onClick={handleReset}>
+          Reset
         </button>
       </div>
     </section>

@@ -39,6 +39,7 @@ export const GameV2 = () => {
 
     const laps = randomTrack.laps;
     let score = 0;
+    let finalScore = 0;
 
     for (let lap = 1; lap <= laps; lap++) {
       const eventChance = Math.random();
@@ -51,13 +52,13 @@ export const GameV2 = () => {
           handleFinishRace();
           setRaceLog((prevLog) => [
             ...prevLog,
-            `Like the creator of this game, who had a renault that cost him 61k in repairs, you made a poor choice! Your score: ${score}`,
+            `Like the creator of this game, who had a renault that cost him 61k in repairs, you made a poor choice! Your score: ${finalScore}`,
           ]);
-          return { score: 0 };
+          return { finalScore: 0 };
         }
       }
       if (lap === laps) {
-        const finalMessage = `The race has ended! Your score: ${score}`;
+        const finalMessage = `The race has ended! Your score: ${finalScore}`;
         handleFinishRace();
         await sleep(Math.floor(Math.random() * 2000) + 1000);
         setRaceLog((prevLog) => [...prevLog, finalMessage]);
@@ -65,9 +66,10 @@ export const GameV2 = () => {
 
       const lapTime = averageTime * (1 + Math.random() * 0.2);
       score += lapTime;
+      finalScore = Math.floor(score);
     }
 
-    return { score };
+    return { finalScore };
   };
 
   const generateEvent = (lap: number, Driver: DriverProps, Car: CarProps) => {

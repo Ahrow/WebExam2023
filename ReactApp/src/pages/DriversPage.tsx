@@ -1,7 +1,7 @@
-import { AddDriverForm } from "../components/api/add-driver-form";
-import { DeleteDriverForm } from "../components/api/delete-driver-form";
-import { EditDriverForm } from "../components/api/edit-driver-form";
-import SearchDriverForm from "../components/api/search-driver-form";
+import { AddDriverForm } from "../components/add-driver-form";
+import { DeleteDriverForm } from "../components/delete-driver-form";
+import { EditDriverForm } from "../components/edit-driver-form";
+import SearchDriverForm from "../components/search-driver-form";
 import { DriverList } from "../components/driver-list";
 import { FormContainer } from "../components/ui/form-container";
 

@@ -142,7 +142,7 @@ export const HeroCard = ({
         <h3 className="sm:text-2xl font-bold text-2xl text-center sm:p-4">
           {title}
         </h3>
-        <p className="sm:text-xl text-base p-8">{description}</p>
+        <p className="sm:text-xl text-base p-4">{description}</p>
       </div>
       <div>
         <img
