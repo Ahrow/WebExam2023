@@ -3,19 +3,13 @@
 ## BUG FIX:
 
 FUNCTIONALITY:
-
-[] move interfaces and props to interfaces
-[] fix minor typescript complaints
-[] FINISH WIN / LOSE condition game
-[] ADD driver item that render dynamically on search id/name
+[x] fix minor typescript complaints
+[x] FINISH WIN / LOSE condition game
 [] Implement TOAST messages everywhere
 
 [x] CORS ERROR on 3d HttpGET -> Check [Action] or other options
 [x] Search function -> ID works / FIX NAME !!! - DriverService.tsx:17
 [x] Still needs Capital letter
-
-- GET http://localhost:5292/api/Drivers/name/Verstappen 404 (Not Found)
-- This is path is wrong -> Need check for partial string aswell!!! "verst" should return verstappen etc.
 
 [x] Fix Type ERROR searchDriver [driver]
 [x] FIX TYPE ERROR Dereference of a possibly null reference.CS8602
@@ -26,7 +20,7 @@ string? Driver.Name { get; set; }
 UI:
 [x] FIX HEADER -> whitespace on right when window scales down
 [x] FIX mobile/desktop/tablet size
-[]
+[x] Better Contrast on buttons
 
 ## TODO:
 
