@@ -124,6 +124,13 @@ export const GameV2 = () => {
     new Promise((resolve) => setTimeout(resolve, ms));
 
   const handleStartRace = async () => {
+    if (
+      !localStorage.getItem("selectedCar") ||
+      !localStorage.getItem("selectedDriver")
+    ) {
+      alert("Please select a driver and a car first!");
+      return;
+    }
     const selectedCar = JSON.parse(localStorage.getItem("selectedCar") || "{}");
     const selectedDriver = JSON.parse(
       localStorage.getItem("selectedDriver") || "{}"
@@ -139,7 +146,7 @@ export const GameV2 = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-20 bg-slate-900 text-white">
+    <div className="flex flex-col items-center mt-20 bg-slate-900 text-white h-full">
       <button
         className="text-white text-lg p-4 bg-yellow-400 rounded-lg mb-4"
         onClick={handleStartRace}
@@ -147,7 +154,7 @@ export const GameV2 = () => {
         Start the Race
       </button>
 
-      <div className="race-log-container">
+      <div className="race-log-container h-[500px]">
         <h3>Race Log</h3>
         <ul>
           {raceLog.map((event, index) => (

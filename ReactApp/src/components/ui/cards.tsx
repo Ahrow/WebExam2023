@@ -65,7 +65,7 @@ export const DriverGameCard = ({
 }: DriverCardProps) => {
   return (
     <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
-      <h1 className="text-xl font-semibold">{title}</h1>
+      <h3 className="text-xl font-semibold">{title}</h3>
       <img
         className="rounded-2xl"
         src={`http://localhost:5292/images/${imgUrl}`}
