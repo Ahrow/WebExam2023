@@ -72,6 +72,9 @@ const DriverService = (() => {
 
   const getByName = async (name: string) => {
     const response = await axios.get(`${driverController}/Get?name=${name}`);
+    if (response.data.length === 0) {
+      throw new Error(`No driver found with name ${name}`);
+    }
     return response.data[0];
   };
 
