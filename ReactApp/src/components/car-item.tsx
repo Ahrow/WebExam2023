@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CarService from "../services/CarService";
 import { CarCard } from "./ui/cards";
 
