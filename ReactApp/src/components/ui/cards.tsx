@@ -32,7 +32,7 @@ export const DriverCard = ({
 }: DriverCardProps) => {
   return (
     <div className="bg-slate-900 rounded-md flex flex-col justify-center items-center text-white">
-      <h1 className="text-xl font-semibold">{title}</h1>
+      <h3 className="text-xl font-semibold">{title}</h3>
       <div className="flex">
         <img
           className="rounded-2xl"
@@ -89,7 +89,7 @@ export const CarCard = ({
 }: CarCardProps) => {
   return (
     <div className="bg-slate-900 h-[400px] rounded-md flex flex-col justify-center items-center text-white">
-      <h2 className="text-xl font-semibold">{name}</h2>
+      <h3 className="text-xl font-semibold">{name}</h3>
       <div className="h-[300px] w-[300px]">
         <img
           className="h-[300px] w-[300px] rounded-2xl object-contain"
@@ -113,7 +113,7 @@ export const TrackCard = ({
 }: TrackCardProps) => {
   return (
     <div className="flex bg-red-400">
-      <h1>{name}</h1>
+      <h3>{name}</h3>
       <p>distance:{distance}</p>
       <p>turns:{turns}</p>
       <p>laps:{laps}</p>
@@ -137,16 +137,16 @@ export const HeroCard = ({
   imageSrc: string;
 }) => {
   return (
-    <div className="sm:h-[400px] sm:w-[800px] h-[300px] w-[400px] bg-slate-900 text-white flex flex-col rounded-xl">
+    <div className="sm:h-[300px] sm:w-[600px] h-[300px] w-[300px] bg-slate-900 text-white flex flex-col rounded-xl">
       <div>
-        <h1 className="sm:text-4xl font-bold text-2xl text-center sm:p-4">
+        <h3 className="sm:text-2xl font-bold text-2xl text-center sm:p-4">
           {title}
-        </h1>
-        <p className="sm:text-2xl text-base p-8">{description}</p>
+        </h3>
+        <p className="sm:text-xl text-base p-8">{description}</p>
       </div>
       <div>
         <img
-          className="sm:h-[200px] sm:w-[800px] h-[150px] w-[400px] rounded-b-xl object-cover"
+          className="sm:h-[200px] sm:w-[600px] h-[150px] w-[400px] rounded-b-xl object-cover"
           src={`src/assets/${imageSrc}`}
           alt="Background image of a formula 1 car."
         />

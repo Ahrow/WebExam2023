@@ -2,7 +2,7 @@ import { Navbar } from "./navbar";
 
 export const Header = () => {
   return (
-    <div className="w-full sm:h-[350px] h-[120px] bg-slate-400 bg-[url('src/assets/header-strong-fade-top.png')] bg-no-repeat bg-cover bg-center">
+    <div className="w-full sm:h-[300px] h-[120px] bg-slate-400 bg-[url('src/assets/header-strong-fade-top.png')] bg-no-repeat bg-cover bg-center">
       <h1 className="absolute sm:top-32 sm:text-6xl top-10 text-2xl font-bold text-red-600 ml-1 sm:ml-4">
         Formula F1
       </h1>
