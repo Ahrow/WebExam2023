@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S3feNXbNLXysp8RhcQcoFEUX4ap6B3lkd278jy0zEgI=",
+  "Hash": "48jRt7AlX40wC4d40vzgNQJMX/4iXKrMSb+27QiYnhg=",
   "Source": "F1API",
   "BasePath": "_content/F1API",
   "Mode": "Default",
@@ -389,6 +389,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\f1-amd-3.png"
+    },
+    {
+      "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
+      "SourceId": "F1API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\",
+      "BasePath": "_content/F1API",
+      "RelativePath": "images/knight.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\knight.png"
     },
     {
       "Identity": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-bahrain.png",

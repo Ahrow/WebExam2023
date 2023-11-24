@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import DriverService from "../../services/DriverService";
 import { Driver } from "../driver-item";
+import { ToastMessageProps } from "../ui/toast-message";
 
 export const DriverContext = createContext<{
   drivers: Driver[];
@@ -10,6 +11,8 @@ export const DriverContext = createContext<{
   deleteDriver: (driverId: number) => void;
   searchDriver: (searchValue: string | number, searchType: string) => void;
   resetSearch: () => void;
+  shouldShowToast: boolean;
+  toastMessage: ToastMessageProps | null;
 } | null>(null);
 
 export const DriverProvider = ({
@@ -35,10 +38,12 @@ export const DriverProvider = ({
         throw new Error("Driver not found");
       }
       driver.name = name;
+      showToast("Driver updated!", "success");
 
       await DriverService.putDriver(driver);
       setDrivers([...drivers]);
     } catch (error) {
+      showToast("Error updating driver", "error");
       console.log("Error in handleSubmit", error);
     }
   };
@@ -50,8 +55,10 @@ export const DriverProvider = ({
     {
       try {
         await DriverService.addDriver(inputs, image);
+        showToast("Driver added!", "success");
         await getDriversFromService();
       } catch (error) {
+        showToast("Error adding driver", "error");
         console.log("Error in handleSubmit", error);
       }
     }
@@ -60,8 +67,12 @@ export const DriverProvider = ({
   const deleteDriver = async (driverId: number) => {
     try {
       await DriverService.deleteById(driverId);
+
+      showToast("Driver deleted!", "success");
+
       await getDriversFromService();
     } catch (error) {
+      showToast("Error deleting driver", "error");
       console.log("Error in handleDeleteSubmit", error);
     }
   };
@@ -78,8 +89,12 @@ export const DriverProvider = ({
 
         if (searchType === "id") {
           fetchedDriver = await DriverService.getById(Number(searchValue));
+          showToast("Driver found!", "success");
         } else if (typeof searchValue === "string") {
+          showToast("Searching for driver...", "success");
           fetchedDriver = await DriverService.getByName(searchValue);
+        } else {
+          showToast("Invalid search type", "error");
         }
 
         setDrivers([fetchedDriver]);
@@ -95,6 +110,22 @@ export const DriverProvider = ({
     await getDriversFromService();
   };
 
+  const [toastMessage, setToastMessage] = useState<ToastMessageProps | null>(
+    null
+  );
+
+  const [shouldShowToast, setShouldShowToast] = useState(false);
+
+  const showToast = (message: string, type: "error" | "success") => {
+    setToastMessage({ message, type });
+    setShouldShowToast(true);
+
+    setTimeout(() => {
+      setToastMessage(null);
+      setShouldShowToast(false);
+    }, 3000);
+  };
+
   return (
     <DriverContext.Provider
       value={{
@@ -105,6 +136,8 @@ export const DriverProvider = ({
         getDriversFromService,
         searchDriver,
         resetSearch,
+        shouldShowToast,
+        toastMessage,
       }}
     >
       {children}

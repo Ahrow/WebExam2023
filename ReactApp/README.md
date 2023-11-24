@@ -5,7 +5,10 @@
 FUNCTIONALITY:
 [x] fix minor typescript complaints
 [x] FINISH WIN / LOSE condition game
-[] Implement TOAST messages everywhere
+[x] Implement TOAST messages everywhere
+
+- [] wrong ID / Name does not trigger toastError -> Consider Toast in DriverService
+- [] add driver /w-out img trigger toastError even though it works -> Consider same as above
 
 [x] CORS ERROR on 3d HttpGET -> Check [Action] or other options
 [x] Search function -> ID works / FIX NAME !!! - DriverService.tsx:17
