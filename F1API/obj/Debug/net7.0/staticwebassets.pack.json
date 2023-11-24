@@ -89,10 +89,6 @@
       "PackagePath": "staticwebassets\\images\\f1-amd-3.png"
     },
     {
-      "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\knight.png",
-      "PackagePath": "staticwebassets\\images\\knight.png"
-    },
-    {
       "Id": "C:\\Kristiania\\WebExam2023\\F1API\\wwwroot\\images\\track-bahrain.png",
       "PackagePath": "staticwebassets\\images\\track-bahrain.png"
     },
