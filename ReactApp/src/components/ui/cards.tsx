@@ -147,7 +147,7 @@ export const HeroCard = ({
       <div>
         <img
           className="sm:h-[200px] sm:w-[600px] h-[150px] w-[400px] rounded-b-xl object-cover"
-          src={`src/assets/${imageSrc}`}
+          src={`/assets/${imageSrc}`}
           alt="Background image of a formula 1 car."
         />
       </div>
