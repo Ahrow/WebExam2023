@@ -5,9 +5,9 @@ export const HeroContainer = () => {
     <div className=" overflow-hidden">
       <div className="flex flex-col justify-center items-center">
         <div className="flex">
-          <div className="h-[700px] w-[450px] bg-black bg-[url('src/assets/line-teal-wide.svg')] bg-no-repeat bg-center"></div>
+          <div className="h-[700px] w-[450px] bg-black bg-[url('/assets/line-teal-wide.svg')] bg-no-repeat bg-center"></div>
           <div className="hidden sm:block h-[700px] w-[450px] bg-black"></div>
-          <div className="h-[700px] w-[450px] bg-black bg-[url('src/assets/glow-red.svg')]"></div>
+          <div className="h-[700px] w-[450px] bg-black bg-[url('/assets/glow-red.svg')]"></div>
         </div>
         <div className="absolute mb-64">
           <HeroCard
@@ -19,7 +19,7 @@ export const HeroContainer = () => {
         </div>
         <div className="flex">
           <div className="h-[700px] w-[450px] bg-black "></div>
-          <div className="h-[700px] w-[450px] bg-black bg-[url('src/assets/red-extended.svg')] bg-no-repeat bg-center"></div>
+          <div className="h-[700px] w-[450px] bg-black bg-[url('/assets/red-extended.svg')] bg-no-repeat bg-center"></div>
           <div className="h-[700px] w-[450px] bg-black "></div>
         </div>
       </div>
